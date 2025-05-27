@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://butaxgbouvqj7"]
+
+[ext_resource type="PackedScene" uid="uid://ba8h8q70xkto0" path="res://assets/kenney_platofmer_kit/arrow.glb" id="1_1jxtk"]
+
+[node name="arrow_sign" instance=ExtResource("1_1jxtk")]

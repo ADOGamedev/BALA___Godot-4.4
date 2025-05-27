@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://5lmmf2d435jy"]
+
+[ext_resource type="PackedScene" uid="uid://bqqsx238irog1" path="res://assets/kenney_platofmer_kit/spike-block.glb" id="1_m2oll"]
+[ext_resource type="Script" uid="uid://dk6aowcndiwpn" path="res://spike_block.gd" id="2_gih6n"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2271j"]
+size = Vector3(0.49823, 0.492111, 0.510437)
+
+[node name="spike_block" instance=ExtResource("1_m2oll")]
+collision_mask = 2
+script = ExtResource("2_gih6n")
+damage = 1
+
+[node name="spike-block2" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.500464, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00320435, 0.00177765, 0.00827026)
+shape = SubResource("BoxShape3D_2271j")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

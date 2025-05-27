@@ -1,0 +1,197 @@
+[gd_scene load_steps=11 format=3 uid="uid://df3edy1hwy874"]
+
+[ext_resource type="FontFile" uid="uid://t487k1nl68ba" path="res://assets/fonts/ConcertOne-Regular.ttf" id="1_6vgek"]
+[ext_resource type="Script" uid="uid://b53aqn6mj274r" path="res://level_box.gd" id="1_gmm3d"]
+[ext_resource type="PackedScene" uid="uid://cn2keqrit0o6y" path="res://diamonds_bar.tscn" id="3_mls2v"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pmrh8"]
+bg_color = Color(0.4164, 0.48, 0.408, 1)
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color(0.4558, 0.53, 0.460747, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+shadow_color = Color(0, 0, 0, 0.321569)
+shadow_size = 15
+
+[sub_resource type="FontVariation" id="FontVariation_o45gl"]
+base_font = ExtResource("1_6vgek")
+
+[sub_resource type="FontVariation" id="FontVariation_br5rp"]
+base_font = ExtResource("1_6vgek")
+baseline_offset = -0.18
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j0dsr"]
+bg_color = Color(0.49751, 0.78, 0.4602, 1)
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color(0.34, 0.68, 0.362667, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+expand_margin_left = 7.0
+expand_margin_top = 7.0
+expand_margin_right = 7.0
+expand_margin_bottom = 7.0
+shadow_color = Color(0, 0, 0, 0.321569)
+shadow_size = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7iykm"]
+bg_color = Color(0.625077, 0.98, 0.5782, 1)
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color(0.43, 0.86, 0.458667, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+shadow_color = Color(0, 0, 0, 0.321569)
+shadow_size = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ypou"]
+bg_color = Color(0.446483, 0.7, 0.413, 1)
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color(0.29, 0.58, 0.309333, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+shadow_color = Color(0, 0, 0, 0.184314)
+shadow_size = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hn3ft"]
+bg_color = Color(0.290196, 0.580392, 0.309804, 1)
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+
+[node name="level_box" type="Control" groups=["level_boxes"]]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -115.0
+offset_top = -115.0
+offset_right = 85.0
+offset_bottom = 85.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gmm3d")
+is_locked = true
+
+[node name="locked" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -80.0
+offset_right = 80.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_pmrh8")
+
+[node name="locked_label" type="Label" parent="locked"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.69732, 0.78, 0.6864, 1)
+theme_override_constants/outline_size = 50
+theme_override_fonts/font = SubResource("FontVariation_o45gl")
+theme_override_font_sizes/font_size = 81
+text = "1	"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="unlocked" type="Button" parent="."]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.6774, 0.9, 0.648, 1)
+theme_override_constants/outline_size = 50
+theme_override_fonts/font = SubResource("FontVariation_br5rp")
+theme_override_font_sizes/font_size = 81
+theme_override_styles/hover = SubResource("StyleBoxFlat_j0dsr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7iykm")
+theme_override_styles/normal = SubResource("StyleBoxFlat_0ypou")
+text = "1"
+
+[node name="diamonds_indicator" type="Control" parent="unlocked"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="unlocked/diamonds_indicator"]
+layout_mode = 2
+offset_right = 200.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Control" type="Control" parent="unlocked/diamonds_indicator/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.65
+mouse_filter = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="unlocked/diamonds_indicator/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hn3ft")
+
+[node name="MarginContainer" type="MarginContainer" parent="unlocked/diamonds_indicator"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 150
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 5
+
+[node name="diamonds_bar" parent="unlocked/diamonds_indicator/MarginContainer" instance=ExtResource("3_mls2v")]
+layout_mode = 2
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="button_down" from="unlocked" to="." method="_on_unlocked_button_down"]
+[connection signal="mouse_entered" from="unlocked" to="." method="_on_unlocked_mouse_entered"]
+[connection signal="mouse_exited" from="unlocked" to="." method="_on_unlocked_mouse_exited"]
+[connection signal="pressed" from="unlocked" to="." method="_on_unlocked_pressed"]

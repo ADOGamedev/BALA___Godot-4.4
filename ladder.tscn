@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=3 uid="uid://da73ha5nnx61h"]
+
+[ext_resource type="Script" uid="uid://baswsw5e78kxh" path="res://ladder.gd" id="1_lqhsa"]
+[ext_resource type="PackedScene" uid="uid://4dixdde0jgdo" path="res://ladder_glb.tscn" id="2_efw3x"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lqhsa"]
+size = Vector3(0.316895, 1.41138, 0.539063)
+
+[sub_resource type="Curve3D" id="Curve3D_3kgug"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.00134015, -0.00481176, 0.00578928, 0, 0, 0, 0, 0, 0, -4.14715, -0.00975418, -0.000277519),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[node name="ladder" type="Node3D"]
+script = ExtResource("1_lqhsa")
+metadata/_edit_group_ = true
+
+[node name="ladder" parent="." instance=ExtResource("2_efw3x")]
+transform = Transform3D(0.00125129, 0.000992317, 1, -1.16415e-10, 0.999999, -0.00099232, -0.999996, 1.24157e-06, 0.0012513, 0.00134015, -0.00481176, 0.00578928)
+
+[node name="front_ray" type="RayCast3D" parent="ladder"]
+transform = Transform3D(0.0002255, 0.000895605, 0.999999, -0.00089763, 1, -0.000895403, -1, -0.000897428, 0.000226304, -0.00167824, 9.40589e-06, -0.0371374)
+target_position = Vector3(0.5, 0, 0)
+collision_mask = 2
+
+[node name="back_ray" type="RayCast3D" parent="ladder"]
+transform = Transform3D(0.0002255, 0.000895605, 0.999999, -0.00089763, 1, -0.000895403, -1, -0.000897428, 0.000226304, -0.00287128, 4.94998e-07, 0.0474727)
+target_position = Vector3(-0.5, 0, 0)
+collision_mask = 2
+
+[node name="Area3D" type="Area3D" parent="ladder"]
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ladder/Area3D"]
+transform = Transform3D(0.999985, 6.82121e-12, 0, -1.43245e-11, 1, -2.9995e-08, -2.32831e-09, 3.00754e-08, 1, 0.00170933, 1.21945, 0.00190264)
+shape = SubResource("BoxShape3D_lqhsa")
+
+[node name="Path3D" type="Path3D" parent="."]
+curve = SubResource("Curve3D_3kgug")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(0.00146241, -0.00119137, 0.999999, 5.82075e-11, 0.999999, 0.00119138, -0.999996, -1.74223e-06, 0.00146242, 0.00134015, -0.00481176, 0.00578928)
+
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="Path3D/PathFollow3D"]
+remote_path = NodePath("../../../ladder")
+
+[connection signal="body_entered" from="ladder/Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="ladder/Area3D" to="." method="_on_area_3d_body_exited"]
+
+[editable path="ladder"]

@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://cacppoq05cwbm"]
+
+[ext_resource type="PackedScene" uid="uid://mfv7oppusw6g" path="res://assets/enemies/sniper_enemy.glb" id="1_kih0v"]
+
+[node name="sniper_enemy" instance=ExtResource("1_kih0v")]
+
+[node name="Torus" parent="." index="0"]
+transform = Transform3D(0, 0, -0.116406, 0, 0, 5.08827e-09, 0, 0, -5.08827e-09, 0.00650144, 1.42933, 0.803074)
+
+[node name="Skeleton3D" parent="Armature" index="1"]
+bones/5/rotation = Quaternion(0.561128, 0.430274, 0.561128, -0.430274)
+bones/7/rotation = Quaternion(-2.51452e-08, -3.0351e-09, -0.00605467, 0.999982)
+bones/10/rotation = Quaternion(-1.91785e-08, -1.15214e-08, 0.00632444, 0.99998)

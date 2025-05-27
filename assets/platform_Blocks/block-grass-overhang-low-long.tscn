@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://b6mmf4u33e7p1"]
+
+[ext_resource type="PackedScene" uid="uid://brveur65h8vrv" path="res://assets/kenney_platofmer_kit/block-grass-overhang-low-long.glb" id="1"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_i45f2"]
+points = PackedVector3Array(0.714373, 0.496384, 0.501189, -0.783583, 0.373176, -0.528682, 0.950926, 0.406369, -0.439535, 0.898544, 0, 0.407033, -0.898544, 0, 0.407033, 0.712585, 2.77556e-17, -0.491469, -0.913907, 0.5, 0.413919, -0.898544, 5.55112e-17, -0.398556, -0.976887, 0.5, -0.279266, 0.746169, 0.496604, -0.493153, -0.744904, 0.403045, 0.531879, 0.976887, 0.5, 0.256277, 0.960466, 0, -0.243461, 0.495648, 0.102092, 0.5, -1, 0.122881, 0.129146, -0.774507, 0, 0.469009, -0.712585, 2.77556e-17, -0.491469, -0.746198, 0.496614, -0.493173, 1.01327, 0.40618, 0.289196, 0.752782, 0.404686, -0.528983, 0.744904, 0.403045, 0.531879, -1.01327, 0.40618, 0.289196, -1.01636, 0.216194, -0.3133, 1.01618, 0.438365, -0.24962, 1, 0.0916554, 0.0354392, 0.774507, 0, 0.469009, 0.948147, 0.405905, 0.446714, 0.976887, 0.5, -0.279266, 1.01636, 0.216194, -0.3133, -0.950926, 0.406369, -0.439535, -0.714373, 0.496384, 0.501189, -0.960466, 0, -0.243461)
+
+[sub_resource type="QuadOccluder3D" id="QuadOccluder3D_i45f2"]
+size = Vector2(1.95364, 0.487368)
+
+[node name="block-grass-overhang-low-long" instance=ExtResource("1")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+shape = SubResource("ConvexPolygonShape3D_i45f2")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.249932, 0)
+occluder = SubResource("QuadOccluder3D_i45f2")

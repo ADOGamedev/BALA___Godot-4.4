@@ -1,0 +1,57 @@
+[gd_scene load_steps=7 format=3 uid="uid://dfk5l1anxdsxk"]
+
+[ext_resource type="PackedScene" uid="uid://xouets3l4o5y" path="res://assets/platform_Blocks/seesaw.tscn" id="1_ovbyk"]
+[ext_resource type="Script" uid="uid://b6kww8v5mr4t5" path="res://seesaw.gd" id="1_xc2ik"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_leodk"]
+height = 1.49272
+radius = 0.07
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_lg7y0"]
+top_radius = 0.07
+bottom_radius = 0.07
+height = 1.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_561rv"]
+albedo_color = Color(0.63, 0.1995, 0, 1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_xc2ik"]
+points = PackedVector3Array(1.60142, 0.5, 0, 1.66967, 0.468285, 0, 1.60142, 0.5, -0.3, -1.21675, 0.5, 0, 1.70158, 0.399961, 0, 1.66967, 0.468285, -0.3, -1.21675, 0.5, -0.3, -1.285, 0.468285, 0, 1.70158, 0.399961, -0.3, 1.70158, -0.400059, 0, -1.285, 0.468285, -0.3, -1.31661, 0.399961, 0, 1.70158, -0.400059, -0.3, 1.66967, -0.468383, 0, -1.31661, 0.399961, -0.3, -1.31661, -0.400059, 0, 1.66967, -0.468383, -0.3, 1.60142, -0.5, 0, -1.31661, -0.400059, -0.3, -1.285, -0.468383, 0, 1.60142, -0.5, -0.3, -1.21675, -0.5, 0, -1.285, -0.468383, -0.3, -1.21675, -0.5, -0.3)
+
+[node name="seesaw" type="Node3D" groups=["seesaw"]]
+script = ExtResource("1_xc2ik")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+collision_layer = 32
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -1.14457e-10, 0.00261846)
+shape = SubResource("CylinderShape3D_leodk")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("CylinderMesh_lg7y0")
+surface_material_override/0 = SubResource("StandardMaterial3D_561rv")
+
+[node name="seesaw" parent="." instance=ExtResource("1_ovbyk")]
+
+[node name="body_detection_area" type="Area3D" parent="seesaw"]
+collision_layer = 11
+collision_mask = 11
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="seesaw/body_detection_area"]
+transform = Transform3D(2, 0, 0, 0, -8.74228e-08, 2, 0, -2, -8.74228e-08, -0.373872, 0.40484, 0)
+shape = SubResource("ConvexPolygonShape3D_xc2ik")
+
+[node name="HingeJoint3D" type="HingeJoint3D" parent="."]
+node_a = NodePath("../seesaw")
+node_b = NodePath("../StaticBody3D2")
+angular_limit/enable = true
+angular_limit/upper = 0.698132
+angular_limit/lower = -0.698132
+motor/target_velocity = 0.0
+
+[connection signal="body_entered" from="seesaw/body_detection_area" to="." method="_on_body_detection_area_body_entered"]
+[connection signal="body_exited" from="seesaw/body_detection_area" to="." method="_on_body_detection_area_body_exited"]

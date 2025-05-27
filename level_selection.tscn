@@ -1,0 +1,269 @@
+[gd_scene load_steps=16 format=3 uid="uid://bfllxbwccy563"]
+
+[ext_resource type="Script" uid="uid://dyhkrt8eaegxo" path="res://level_selection.gd" id="1_6ot82"]
+[ext_resource type="Texture2D" uid="uid://bh2qpayfk42ue" path="res://assets/ui/normal_arrow.png" id="2_0qyk8"]
+[ext_resource type="Texture2D" uid="uid://2sakptoeyopg" path="res://assets/ui/pressed_arrow.png" id="3_oynde"]
+[ext_resource type="Texture2D" uid="uid://d26oyaw0fyagq" path="res://assets/ui/hover_arrow.png" id="4_ta5lr"]
+[ext_resource type="FontFile" uid="uid://f4gf616lj7hp" path="res://assets/fonts/Arista-Pro-Fat-trial.ttf" id="5_gcw0l"]
+[ext_resource type="FontFile" uid="uid://t487k1nl68ba" path="res://assets/fonts/ConcertOne-Regular.ttf" id="6_k5cxw"]
+[ext_resource type="PackedScene" uid="uid://bbh3cry7sitpl" path="res://grid_container.tscn" id="6_lbfct"]
+[ext_resource type="Texture2D" uid="uid://b3gm7id5uvjep" path="res://assets/ui/hud_coins.png" id="7_dvl1x"]
+[ext_resource type="Texture2D" uid="uid://db3ur21haqyf5" path="res://assets/ui/hud_diamond.png" id="8_7w7w2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wceqb"]
+bg_color = Color(0.386733, 0.331779, 0.180652, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d5vbu"]
+bg_color = Color(0.554921, 0.534487, 0.331476, 1)
+border_width_left = 40
+border_width_top = 40
+border_width_right = 40
+border_width_bottom = 40
+border_color = Color(0.43, 0.4128, 0.258, 1)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+corner_detail = 3
+shadow_color = Color(0, 0, 0, 0.321569)
+shadow_size = 25
+
+[sub_resource type="FontVariation" id="FontVariation_vdwh7"]
+base_font = ExtResource("5_gcw0l")
+spacing_glyph = 35
+baseline_offset = 0.625
+
+[sub_resource type="FontVariation" id="FontVariation_2jtva"]
+base_font = ExtResource("6_k5cxw")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2gn6n"]
+bg_color = Color(0.73, 0.582783, 0.3285, 1)
+corner_radius_top_left = 60
+corner_radius_top_right = 60
+corner_radius_bottom_right = 60
+corner_radius_bottom_left = 60
+corner_detail = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ct1jq"]
+draw_center = false
+border_width_left = 30
+border_width_top = 30
+border_width_right = 30
+border_width_bottom = 30
+border_color = Color(0.91, 0.73983, 0.4459, 1)
+corner_radius_top_left = 60
+corner_radius_top_right = 60
+corner_radius_bottom_right = 60
+corner_radius_bottom_left = 60
+corner_detail = 2
+
+[node name="level_selection" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+script = ExtResource("1_6ot82")
+
+[node name="Panel2" type="Panel" parent="."]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_wceqb")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_d5vbu")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="back_button" type="MarginContainer" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.3
+theme_override_constants/margin_left = 55
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 30
+
+[node name="TextureButton" type="TextureButton" parent="VBoxContainer/HBoxContainer2/back_button"]
+modulate = Color(0.87, 0.351625, 0.3045, 1)
+custom_minimum_size = Vector2(80, 90)
+layout_mode = 2
+texture_normal = ExtResource("2_0qyk8")
+texture_pressed = ExtResource("3_oynde")
+texture_hover = ExtResource("4_ta5lr")
+ignore_texture_size = true
+stretch_mode = 5
+flip_h = true
+
+[node name="title" type="Label" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 5.19
+theme_override_colors/font_color = Color(0.65, 0.4602, 0.1755, 1)
+theme_override_colors/font_shadow_color = Color(0.39, 0.33384, 0.2496, 1)
+theme_override_colors/font_outline_color = Color(0.88, 0.6864, 0.396, 1)
+theme_override_constants/shadow_offset_x = 7
+theme_override_constants/shadow_offset_y = 7
+theme_override_constants/outline_size = 60
+theme_override_constants/shadow_outline_size = 60
+theme_override_fonts/font = SubResource("FontVariation_vdwh7")
+theme_override_font_sizes/font_size = 121
+text = "LEVELS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="coins_diamonds_indicator" type="MarginContainer" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.35
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 55
+
+[node name="coins_diamonds_container" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2/coins_diamonds_indicator"]
+layout_mode = 2
+
+[node name="coins" type="HBoxContainer" parent="VBoxContainer/HBoxContainer2/coins_diamonds_indicator/coins_diamonds_container"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="coins_label" type="Label" parent="VBoxContainer/HBoxContainer2/coins_diamonds_indicator/coins_diamonds_container/coins"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = SubResource("FontVariation_2jtva")
+theme_override_font_sizes/font_size = 36
+text = "0"
+horizontal_alignment = 2
+
+[node name="coins_texture" type="TextureRect" parent="VBoxContainer/HBoxContainer2/coins_diamonds_indicator/coins_diamonds_container/coins"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("7_dvl1x")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="diamonds" type="HBoxContainer" parent="VBoxContainer/HBoxContainer2/coins_diamonds_indicator/coins_diamonds_container"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="diamonds_label" type="Label" parent="VBoxContainer/HBoxContainer2/coins_diamonds_indicator/coins_diamonds_container/diamonds"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = SubResource("FontVariation_2jtva")
+theme_override_font_sizes/font_size = 36
+text = "0"
+horizontal_alignment = 2
+
+[node name="diamonds_texture" type="TextureRect" parent="VBoxContainer/HBoxContainer2/coins_diamonds_indicator/coins_diamonds_container/diamonds"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("8_7w7w2")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 25
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 25
+
+[node name="back_button" type="TextureButton" parent="VBoxContainer/HBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("2_0qyk8")
+texture_pressed = ExtResource("3_oynde")
+texture_hover = ExtResource("4_ta5lr")
+ignore_texture_size = true
+stretch_mode = 5
+flip_h = true
+
+[node name="clip_control" type="Control" parent="VBoxContainer/HBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(781.64, 500)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Panel2" type="Panel" parent="VBoxContainer/HBoxContainer/clip_control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 28.0
+offset_right = 0.359985
+offset_bottom = -66.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2gn6n")
+
+[node name="Control" type="Control" parent="VBoxContainer/HBoxContainer/clip_control"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 28.0
+offset_top = 56.0
+offset_right = -27.64
+offset_bottom = -94.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" parent="VBoxContainer/HBoxContainer/clip_control/Control" instance=ExtResource("6_lbfct")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -342.0
+offset_top = -156.0
+offset_right = 1058.0
+offset_bottom = 261.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.75, 0.75)
+mouse_filter = 0
+
+[node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer/clip_control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 28.0
+offset_right = 0.359985
+offset_bottom = -66.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ct1jq")
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_right = 25
+
+[node name="next_button" type="TextureButton" parent="VBoxContainer/HBoxContainer/MarginContainer2"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("2_0qyk8")
+texture_pressed = ExtResource("3_oynde")
+texture_hover = ExtResource("4_ta5lr")
+ignore_texture_size = true
+stretch_mode = 5
+
+[connection signal="button_up" from="VBoxContainer/HBoxContainer2/back_button/TextureButton" to="." method="_on_texture_button_button_up"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/MarginContainer/back_button" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/MarginContainer2/next_button" to="." method="_on_next_button_pressed"]

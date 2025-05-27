@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://i2lawlwb885w"]
+
+[ext_resource type="Script" uid="uid://v23tj0s4v80t" path="res://weapon_menu.gd" id="1_4xktf"]
+[ext_resource type="Script" uid="uid://cjvwary5bxceg" path="res://addons/advanced_radial_menu/radial_menu_class.gd" id="1_hkwtt"]
+
+[node name="weapon_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.575, 0.575)
+pivot_offset = Vector2(576, 324)
+size_flags_horizontal = 4
+size_flags_vertical = 6
+script = ExtResource("1_4xktf")
+
+[node name="RadialMenuAdvanced" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hkwtt")
+select_action_name = ""
+color = Color(0.73, 0.582783, 0.3285, 0.415686)
+arc_color = Color(0.81, 0.64368, 0.3564, 1)
+arc_inner_radius = 89.578
+arc_detail = 24
+arc_line_width = 31
+line_color = Color(1, 0.871667, 0.65, 1)
+line_width = 21
+children_size = 151
+children_auto_sizing_factor = 0.8
+hover_color = Color(0.91, 0.73983, 0.4459, 0.415686)
+hover_offset_start = 255
+hover_offset_end = 120
+stroke_enabled = true
+stroke_color = Color(0.91, 0.73983, 0.4459, 1)
+stroke_width = 46
+animated_pulse_offset = 5
+animated_pulse_color = Color(1, 1, 1, 0.415686)

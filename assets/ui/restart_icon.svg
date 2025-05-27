@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="256mm"
+   height="256mm"
+   viewBox="0 0 256 256"
+   version="1.1"
+   id="svg1"
+   inkscape:export-filename="restart_icon.svg"
+   inkscape:export-xdpi="10.274684"
+   inkscape:export-ydpi="10.274684"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#000000"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Capa 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g2"
+       transform="matrix(1.2563619,0,0,1.2669135,43.091337,-32.998045)"
+       style="stroke-width:23.7788;stroke-dasharray:none">
+      <path
+         style="fill:none;fill-opacity:1;stroke:#ffffff;stroke-width:23.7788;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+         id="path1"
+         sodipodi:type="arc"
+         sodipodi:cx="93.087189"
+         sodipodi:cy="126.70897"
+         sodipodi:rx="53.443588"
+         sodipodi:ry="53.443588"
+         sodipodi:start="4.5108093"
+         sodipodi:end="3.2907209"
+         sodipodi:open="true"
+         sodipodi:arc-type="arc"
+         d="m 82.386859,74.347532 a 53.443588,53.443588 0 0 1 57.431321,26.430148 53.443588,53.443588 0 0 1 -7.9627,62.71765 53.443588,53.443588 0 0 1 -62.213937,11.23987 53.443588,53.443588 0 0 1 -29.404771,-55.96667" />
+      <path
+         style="fill:none;fill-opacity:1;stroke:#ffffff;stroke-width:23.7788;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+         d="M 66.364208,120.27253 40.011789,93.934076 13.297082,120.66296"
+         id="path2"
+         inkscape:export-filename="restart_icon.svg"
+         inkscape:export-xdpi="10.274684"
+         inkscape:export-ydpi="10.274684" />
+    </g>
+  </g>
+</svg>

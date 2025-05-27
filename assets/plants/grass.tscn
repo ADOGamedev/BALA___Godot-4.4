@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://lbfgny4vss72"]
+
+[ext_resource type="PackedScene" uid="uid://c8g0pyo2v25ml" path="res://assets/kenney_platofmer_kit/grass.glb" id="1_pjv2t"]
+[ext_resource type="Script" uid="uid://df66qll3h4113" path="res://assets/plants/grass.gd" id="2_nf0k5"]
+[ext_resource type="Shader" uid="uid://6npnkyk04g2o" path="res://assets/shaders/grass.tres" id="3_yadog"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_81r62"]
+render_priority = 0
+shader = ExtResource("3_yadog")
+shader_parameter/movement = Vector2(0.035, 0.02)
+shader_parameter/green_tone = 2.0
+
+[node name="grass" instance=ExtResource("1_pjv2t")]
+script = ExtResource("2_nf0k5")
+
+[node name="grass2" parent="." index="0"]
+lod_bias = 0.3
+gi_mode = 2
+surface_material_override/0 = SubResource("ShaderMaterial_81r62")

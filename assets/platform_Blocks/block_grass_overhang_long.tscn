@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://cco86yb7taq6p"]
+
+[ext_resource type="PackedScene" uid="uid://d3sysk2jg8e52" path="res://assets/kenney_platofmer_kit/block-grass-overhang-long.glb" id="1_bi2sv"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_7m2is"]
+points = PackedVector3Array(0.721236, 0.981862, 0.505964, -0.783581, 0.856189, -0.528681, 0.955331, 0.893845, -0.441591, 0.9209, 0.00343686, 0.417144, -0.9209, 0.00343686, 0.417144, 0.724848, 0.00722749, -0.5, -0.924446, 0.989983, 0.418733, -0.923864, 0.00185276, -0.409996, -0.982678, 0.987238, -0.281004, 0.752049, 0.981461, -0.497073, -0.751612, 0.887295, 0.536769, 0.980035, 0.985817, 0.288761, 0.989756, 0.000846152, -0.251015, 0.785331, 0.00878032, 0.475505, -0.724848, 0.00722749, -0.5, -1.01807, 0.893412, 0.290546, -0.989737, 0.000755817, -0.251061, -0.78536, 0.00876272, 0.475522, 0.751744, 0.887262, 0.536724, 0.758065, 0.890553, -0.532725, 1.01807, 0.893412, 0.290546, -0.751934, 0.981513, -0.497127, 1.02076, 0.926308, -0.250765, -1.01637, 0.860943, -0.313304, -0.986493, 0.00237859, 0.258807, 0.986512, 0.00246863, 0.25876, 0.952765, 0.892775, 0.448869, 0.923864, 0.00185276, -0.409996, 0.982727, 0.987163, -0.280961, -0.955331, 0.893845, -0.441591, -0.952765, 0.892775, 0.448869, -0.721236, 0.981862, 0.505964)
+
+[sub_resource type="QuadOccluder3D" id="QuadOccluder3D_7m2is"]
+size = Vector2(1.97645, 0.971699)
+
+[sub_resource type="QuadOccluder3D" id="QuadOccluder3D_v1u3s"]
+
+[node name="block-grass-overhang-long" instance=ExtResource("1_bi2sv")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+shape = SubResource("ConvexPolygonShape3D_7m2is")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.502375, 0)
+occluder = SubResource("QuadOccluder3D_7m2is")
+
+[node name="OccluderInstance3D2" type="OccluderInstance3D" parent="." index="3"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0.487377, 0)
+occluder = SubResource("QuadOccluder3D_v1u3s")

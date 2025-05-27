@@ -1,0 +1,80 @@
+[gd_resource type="VisualShader" load_steps=8 format=3 uid="uid://b6sc7mm03m1jh"]
+
+[sub_resource type="VisualShaderNodeColorConstant" id="VisualShaderNodeColorConstant_6dsep"]
+expanded_output_ports = [0]
+constant = Color(1, 0, 0, 1)
+
+[sub_resource type="Gradient" id="Gradient_81w33"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_4f36e"]
+gradient = SubResource("Gradient_81w33")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(2.3, 0)
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_yer0p"]
+texture = SubResource("GradientTexture2D_4f36e")
+
+[sub_resource type="VisualShaderNodeVectorCompose" id="VisualShaderNodeVectorCompose_sd4dx"]
+default_input_values = [0, 0.0, 1, 0.0, 2, 0.0, 3, 0.0]
+op_type = 0
+
+[sub_resource type="VisualShaderNodeFloatParameter" id="VisualShaderNodeFloatParameter_chdyb"]
+parameter_name = "vignete_scale"
+default_value_enabled = true
+default_value = 1.0
+
+[sub_resource type="VisualShaderNodeUVFunc" id="VisualShaderNodeUVFunc_r1ahn"]
+function = 1
+
+[resource]
+code = "shader_type canvas_item;
+render_mode blend_mix;
+
+uniform sampler2D tex_frg_4;
+uniform float vignete_scale = 1.0;
+
+
+
+void fragment() {
+// ColorConstant:2
+	vec4 n_out2p0 = vec4(1.000000, 0.000000, 0.000000, 1.000000);
+
+
+// Texture2D:4
+	vec4 n_out4p0 = texture(tex_frg_4, UV);
+
+
+// FloatParameter:7
+	float n_out7p0 = vignete_scale;
+
+
+// VectorCompose:6
+	vec2 n_out6p0 = vec2(n_out7p0, n_out7p0);
+
+
+// UVFunc:8
+	vec2 n_in8p2 = vec2(0.00000, 0.00000);
+	vec2 n_out8p0 = (vec2(n_out4p0.xy) - n_in8p2) * n_out6p0 + n_in8p2;
+
+
+// Output:0
+	COLOR.rgb = vec3(n_out2p0.xyz);
+	COLOR.a = n_out8p0.x;
+
+
+}
+"
+mode = 1
+flags/light_only = false
+nodes/fragment/2/node = SubResource("VisualShaderNodeColorConstant_6dsep")
+nodes/fragment/2/position = Vector2(-60, 0)
+nodes/fragment/4/node = SubResource("VisualShaderNodeTexture_yer0p")
+nodes/fragment/4/position = Vector2(-340, 240)
+nodes/fragment/6/node = SubResource("VisualShaderNodeVectorCompose_sd4dx")
+nodes/fragment/6/position = Vector2(-220, 560)
+nodes/fragment/7/node = SubResource("VisualShaderNodeFloatParameter_chdyb")
+nodes/fragment/7/position = Vector2(-600, 560)
+nodes/fragment/8/node = SubResource("VisualShaderNodeUVFunc_r1ahn")
+nodes/fragment/8/position = Vector2(80, 320)
+nodes/fragment/connections = PackedInt32Array(2, 0, 0, 0, 7, 0, 6, 0, 7, 0, 6, 1, 4, 0, 8, 0, 8, 0, 0, 1, 6, 0, 8, 1)

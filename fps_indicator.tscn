@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://1mey1e6ivmxb"]
+
+[ext_resource type="FontFile" uid="uid://t487k1nl68ba" path="res://assets/fonts/ConcertOne-Regular.ttf" id="1_iirjn"]
+[ext_resource type="Script" uid="uid://bxq554aff17fo" path="res://fps_indicator.gd" id="2_gl2se"]
+
+[node name="fps_indicator" type="Control"]
+process_mode = 3
+z_index = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+script = ExtResource("2_gl2se")
+
+[node name="fps_label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -149.0
+offset_top = -43.0
+offset_right = -4.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.1716, 0.78, 0.23244, 1)
+theme_override_fonts/font = ExtResource("1_iirjn")
+theme_override_font_sizes/font_size = 36
+text = "FPS: 60.0"

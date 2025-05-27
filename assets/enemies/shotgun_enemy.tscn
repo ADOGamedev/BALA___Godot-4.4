@@ -1,0 +1,365 @@
+[gd_scene load_steps=32 format=3 uid="uid://bqtqtxmlfgafq"]
+
+[ext_resource type="PackedScene" uid="uid://cgr1wl135hr4t" path="res://assets/enemies/shotgun_enemy.glb" id="1_y006e"]
+[ext_resource type="ArrayMesh" uid="uid://dssc4xygd45qu" path="res://assets/enemies/exclamation_mark.obj" id="2_ifcgr"]
+[ext_resource type="Script" uid="uid://ckoocho63qxsj" path="res://assets/enemies/shotgun_enemy.gd" id="2_wv8b5"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wv8b5"]
+radius = 0.435662
+height = 3.24236
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ifcgr"]
+resource_name = "Material"
+cull_mode = 2
+albedo_color = Color(0.698039, 0.117647, 0.117647, 1)
+metallic = 0.0550459
+roughness = 0.37156
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wv8b5"]
+resource_name = "Material.006"
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.831372, 0.686274, 0.215687, 1)
+metallic = 0.54
+metallic_specular = 0.24
+roughness = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o7pd4"]
+resource_name = "Material.017"
+cull_mode = 2
+albedo_color = Color(0, 0, 0, 1)
+roughness = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2fe0i"]
+resource_name = "Material.019"
+cull_mode = 2
+albedo_color = Color(0.831372, 0.686274, 0.215687, 1)
+metallic = 0.992126
+roughness = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7mtfo"]
+resource_name = "Material.016"
+cull_mode = 2
+albedo_color = Color(0.831372, 0.686274, 0.215687, 1)
+metallic = 0.992126
+roughness = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nlvik"]
+resource_name = "Material.017"
+cull_mode = 2
+albedo_color = Color(0, 0, 0, 1)
+roughness = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d0ynb"]
+resource_name = "Material.017"
+cull_mode = 2
+albedo_color = Color(0, 0, 0, 1)
+roughness = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ljndi"]
+resource_name = "Material.005"
+cull_mode = 2
+albedo_color = Color(0.696192, 0.117662, 0.118779, 1)
+metallic = 0.0550459
+roughness = 0.37156
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ifcgr"]
+animation = &"walk"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_wv8b5"]
+advance_mode = 2
+advance_condition = &"has_appeared"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_cdlg5"]
+states/Start/position = Vector2(245, 103)
+states/walk/node = SubResource("AnimationNodeAnimation_ifcgr")
+states/walk/position = Vector2(398, 103)
+transitions = ["Start", "walk", SubResource("AnimationNodeStateMachineTransition_wv8b5")]
+graph_offset = Vector2(-27, 21.6558)
+
+[sub_resource type="Animation" id="Animation_t82i6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_jwdev"]
+resource_name = "exclamation_mark"
+length = 1.15
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3, 1, 1.13333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.3, 0.3, 0.3), Vector3(0.2, 0.2, 0.2), Vector3(0.2, 0.2, 0.2), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 5, 0), Vector3(0, 7.4, 0), Vector3(0, 7, 0), Vector3(0, 7, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vq8e1"]
+_data = {
+&"RESET": SubResource("Animation_t82i6"),
+&"exclamation_mark": SubResource("Animation_jwdev")
+}
+
+[sub_resource type="Curve" id="Curve_2fe0i"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.556989, 1), 0.0, 0.0, 0, 0, Vector2(0.860215, 0.604943), -3.37466, -3.37466, 0, 0, Vector2(0.991398, 0.0360616), -6.32748, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_ifcgr"]
+curve = SubResource("Curve_2fe0i")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ifcgr"]
+angle_min = 1.07288e-05
+angle_max = 1.07288e-05
+spread = 180.0
+initial_velocity_min = 1.0
+initial_velocity_max = 5.0
+gravity = Vector3(0, 4, 0)
+scale_min = 0.6
+scale_max = 1.2
+scale_curve = SubResource("CurveTexture_ifcgr")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cdlg5"]
+resource_name = "Material.002"
+albedo_color = Color(0.831373, 0.686275, 0.215686, 1)
+metallic = 0.992126
+roughness = 0.5
+
+[sub_resource type="SphereMesh" id="SphereMesh_ljndi"]
+material = SubResource("StandardMaterial3D_cdlg5")
+radius = 0.05
+height = 0.1
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1j7y7"]
+angle_min = 1.07288e-05
+angle_max = 1.07288e-05
+spread = 180.0
+initial_velocity_min = 1.0
+initial_velocity_max = 5.0
+gravity = Vector3(0, 4, 0)
+scale_min = 0.6
+scale_max = 1.2
+scale_curve = SubResource("CurveTexture_ifcgr")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2arsw"]
+resource_name = "Material"
+cull_mode = 2
+albedo_color = Color(0.696192, 0.117662, 0.118779, 1)
+metallic = 0.0550459
+roughness = 0.37156
+
+[sub_resource type="SphereMesh" id="SphereMesh_n1s2f"]
+material = SubResource("StandardMaterial3D_2arsw")
+radius = 0.035
+height = 0.07
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1j7y7"]
+resource_name = "Material.005"
+cull_mode = 2
+albedo_color = Color(0.696192, 0.117662, 0.118779, 1)
+metallic = 0.0550459
+roughness = 0.37156
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n1s2f"]
+resource_name = "Material.005"
+cull_mode = 2
+albedo_color = Color(0.696192, 0.117662, 0.118779, 1)
+metallic = 0.0550459
+roughness = 0.37156
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jolcx"]
+resource_name = "Material.005"
+cull_mode = 2
+albedo_color = Color(0.696192, 0.117662, 0.118779, 1)
+metallic = 0.0550459
+roughness = 0.37156
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y8c7o"]
+resource_name = "Material.005"
+cull_mode = 2
+albedo_color = Color(0.696192, 0.117662, 0.118779, 1)
+metallic = 0.0550459
+roughness = 0.37156
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dd1aq"]
+resource_name = "Material.005"
+cull_mode = 2
+albedo_color = Color(0.696192, 0.117662, 0.118779, 1)
+metallic = 0.0550459
+roughness = 0.37156
+
+[node name="shotgun_enemy" groups=["enemies", "shotgun_enemies"] instance=ExtResource("1_y006e")]
+collision_layer = 8
+collision_mask = 27
+script = ExtResource("2_wv8b5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="0"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.0233998, 3.26615, 0.0179882)
+shape = SubResource("CapsuleShape3D_wv8b5")
+
+[node name="Armature" parent="." index="1"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.00350642, 0.554565, 0.0207734)
+
+[node name="RayCast3D" type="RayCast3D" parent="Armature" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00350642, -0.547616, 0.981157)
+
+[node name="Cylinder_005" parent="Armature/Skeleton3D" index="0"]
+unique_name_in_owner = true
+surface_material_override/0 = SubResource("StandardMaterial3D_ifcgr")
+
+[node name="Cylinder_006" parent="Armature/Skeleton3D" index="1"]
+unique_name_in_owner = true
+surface_material_override/0 = SubResource("StandardMaterial3D_wv8b5")
+
+[node name="Cylinder_010" parent="Armature/Skeleton3D" index="2"]
+unique_name_in_owner = true
+cast_shadow = 0
+surface_material_override/0 = SubResource("StandardMaterial3D_o7pd4")
+
+[node name="Sphere_001" parent="Armature/Skeleton3D" index="3"]
+unique_name_in_owner = true
+surface_material_override/0 = SubResource("StandardMaterial3D_2fe0i")
+
+[node name="Sphere_015" parent="Armature/Skeleton3D" index="4"]
+unique_name_in_owner = true
+surface_material_override/0 = SubResource("StandardMaterial3D_7mtfo")
+
+[node name="Sphere_016" parent="Armature/Skeleton3D" index="5"]
+unique_name_in_owner = true
+cast_shadow = 0
+surface_material_override/0 = SubResource("StandardMaterial3D_nlvik")
+
+[node name="Sphere_017" parent="Armature/Skeleton3D" index="6"]
+unique_name_in_owner = true
+cast_shadow = 0
+surface_material_override/0 = SubResource("StandardMaterial3D_d0ynb")
+
+[node name="Plane" parent="." index="2"]
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_ljndi")
+
+[node name="AnimationTree" type="AnimationTree" parent="." index="3"]
+tree_root = SubResource("AnimationNodeStateMachine_cdlg5")
+anim_player = NodePath("../AnimationPlayer")
+parameters/conditions/has_appeared = false
+
+[node name="exclamation_mark" type="MeshInstance3D" parent="." index="4"]
+transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+mesh = ExtResource("2_ifcgr")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="exclamation_mark" index="0"]
+libraries = {
+&"": SubResource("AnimationLibrary_vq8e1")
+}
+
+[node name="player_y_pos" type="Marker3D" parent="." index="5"]
+transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+
+[node name="shooting_positions" type="Node3D" parent="." index="6"]
+
+[node name="shooting_pos" type="Marker3D" parent="shooting_positions" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.98675, 0)
+
+[node name="shooting_pos2" type="Marker3D" parent="shooting_positions" index="1"]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 0, 2.98675, 0)
+
+[node name="shooting_pos3" type="Marker3D" parent="shooting_positions" index="2"]
+transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, 0, 2.98675, 0)
+
+[node name="shooting_pos4" type="Marker3D" parent="shooting_positions" index="3"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 2.98675, 0)
+
+[node name="shooting_pos5" type="Marker3D" parent="shooting_positions" index="4"]
+transform = Transform3D(-0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, -0.5, 0, 2.98675, 0)
+
+[node name="shooting_pos6" type="Marker3D" parent="shooting_positions" index="5"]
+transform = Transform3D(-0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866025, 0, 2.98675, 0)
+
+[node name="shooting_pos7" type="Marker3D" parent="shooting_positions" index="6"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 2.98675, 0)
+
+[node name="shooting_pos8" type="Marker3D" parent="shooting_positions" index="7"]
+transform = Transform3D(-0.866026, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866026, 0, 2.98675, 0)
+
+[node name="shooting_pos9" type="Marker3D" parent="shooting_positions" index="8"]
+transform = Transform3D(-0.5, 0, -0.866026, 0, 1, 0, 0.866026, 0, -0.5, 0, 2.98675, 0)
+
+[node name="shooting_pos10" type="Marker3D" parent="shooting_positions" index="9"]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 0, 2.98675, 0)
+
+[node name="shooting_pos11" type="Marker3D" parent="shooting_positions" index="10"]
+transform = Transform3D(0.5, 0, -0.866026, 0, 1, 0, 0.866026, 0, 0.5, 0, 2.98675, 0)
+
+[node name="shooting_pos12" type="Marker3D" parent="shooting_positions" index="11"]
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 0, 3.57452, 0)
+
+[node name="body_particles" type="GPUParticles3D" parent="." index="7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.822463, 0)
+visible = false
+amount = 9
+process_material = SubResource("ParticleProcessMaterial_ifcgr")
+draw_pass_1 = SubResource("SphereMesh_ljndi")
+
+[node name="head_particles" type="GPUParticles3D" parent="." index="8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.23186, 0)
+visible = false
+amount = 18
+process_material = SubResource("ParticleProcessMaterial_1j7y7")
+draw_pass_1 = SubResource("SphereMesh_n1s2f")
+
+[node name="Plane_001" parent="." index="9"]
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_1j7y7")
+
+[node name="Plane_002" parent="." index="10"]
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_n1s2f")
+
+[node name="Plane_003" parent="." index="11"]
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_jolcx")
+
+[node name="Plane_004" parent="." index="12"]
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_y8c7o")
+
+[node name="Plane_005" parent="." index="13"]
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_dd1aq")

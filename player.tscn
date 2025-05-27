@@ -1,0 +1,134 @@
+[gd_scene load_steps=18 format=3 uid="uid://nxldtv1ovv5l"]
+
+[ext_resource type="Script" uid="uid://bg4owdpthcypb" path="res://player.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://b3fdg414a04rk" path="res://assets/players_blasters/gunA.tscn" id="2_ai38h"]
+[ext_resource type="PackedScene" uid="uid://cwlclkprsf4gj" path="res://assets/players_blasters/gunB.tscn" id="3_iiedq"]
+[ext_resource type="PackedScene" uid="uid://b4o8vx7eli2eu" path="res://assets/players_blasters/shotgunA.tscn" id="4_vqm4m"]
+[ext_resource type="PackedScene" uid="uid://chkfqdc5y3rbq" path="res://assets/players_blasters/shotgunB.tscn" id="5_irqrr"]
+[ext_resource type="PackedScene" uid="uid://bm3bcy27jsdbs" path="res://assets/players_blasters/submachine_gunA.tscn" id="6_ti78l"]
+[ext_resource type="PackedScene" uid="uid://6cbdi1kbgf2s" path="res://assets/players_blasters/submachine_gunB.tscn" id="7_qftwc"]
+[ext_resource type="Script" uid="uid://df65rfxb7s5vh" path="res://camera.gd" id="8_bwjto"]
+[ext_resource type="AudioStream" uid="uid://coakb3nm77pey" path="res://assets/sounds/sfx/sfx_diamond.wav" id="8_dw050"]
+[ext_resource type="AudioStream" uid="uid://cbqybx5ocs5si" path="res://assets/sounds/sfx/sfx_coin.wav" id="9_b26j0"]
+[ext_resource type="AudioStream" uid="uid://wp246g5vcnhh" path="res://assets/sounds/sfx/sfx_footsteps.wav" id="10_n7ghd"]
+[ext_resource type="AudioStream" uid="uid://dfgysse8nv7ni" path="res://assets/sounds/sfx/sfx_blaster.wav" id="11_nvl01"]
+[ext_resource type="AudioStream" uid="uid://cq4yk6uetnivv" path="res://assets/sounds/sfx/sfx_get_damage.wav" id="12_ivps1"]
+[ext_resource type="AudioStream" uid="uid://cvokbm2ahbg7u" path="res://assets/sounds/sfx/sfx_landing.wav" id="13_urp6f"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_c8hc7"]
+radius = 0.45
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3ehk5"]
+radius = 0.45
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_bwjto"]
+noise_type = 0
+fractal_octaves = 4
+fractal_lacunarity = 1.675
+
+[node name="player" type="CharacterBody3D" groups=["player"]]
+collision_layer = 2
+collision_mask = 9
+script = ExtResource("1")
+available_weapons = [ExtResource("2_ai38h"), ExtResource("3_iiedq"), ExtResource("4_vqm4m"), ExtResource("5_irqrr"), ExtResource("6_ti78l"), ExtResource("7_qftwc")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.915, 0)
+visible = false
+mesh = SubResource("CapsuleMesh_c8hc7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.915, 0)
+shape = SubResource("CapsuleShape3D_3ehk5")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 2
+collision_mask = 9
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1.01, 0, 0, 0, 1.01, 0, 0, 0, 1.01, 0, 0.915, 0)
+shape = SubResource("CapsuleShape3D_3ehk5")
+
+[node name="pivot" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
+
+[node name="Camera3D" type="Camera3D" parent="pivot"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+script = ExtResource("8_bwjto")
+noise = SubResource("FastNoiseLite_bwjto")
+
+[node name="weapon_pos" type="Marker3D" parent="pivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.303716, -0.232982, 0.40243)
+
+[node name="platforms_rays" type="Node3D" parent="."]
+
+[node name="platforms_ray4" type="RayCast3D" parent="platforms_rays"]
+transform = Transform3D(1, 0, 0, 0, 0.997564, 0.0697565, 0, -0.0697565, 0.997564, 0, 0.176784, 0.266041)
+target_position = Vector3(0, -0.5, 0)
+
+[node name="platforms_ray5" type="RayCast3D" parent="platforms_rays"]
+transform = Transform3D(1, 0, 0, 0, 0.997564, -0.0697565, 0, 0.0697565, 0.997564, 0, 0.176784, -0.266625)
+target_position = Vector3(0, -0.5, 0)
+
+[node name="platforms_ray2" type="RayCast3D" parent="platforms_rays"]
+transform = Transform3D(0.997564, 0.0697565, 0, -0.0697565, 0.997564, 0, 0, 0, 1, -0.263248, 0.176784, 0)
+target_position = Vector3(0, -0.5, 0)
+
+[node name="platforms_ray3" type="RayCast3D" parent="platforms_rays"]
+transform = Transform3D(0.997564, -0.0697565, 0, 0.0697565, 0.997564, 0, 0, 0, 1, 0.261956, 0.176784, 0)
+target_position = Vector3(0, -0.5, 0)
+
+[node name="ceiling_ray" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.21134, 0)
+target_position = Vector3(0, 0.7, 0)
+
+[node name="ladder_ray" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0770548, 0.442934)
+target_position = Vector3(0, 0, 0.35)
+
+[node name="coyote_timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="shooting_timer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[node name="sfx_diamond" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("8_dw050")
+volume_db = -37.591
+pitch_scale = 1.31
+bus = &"Sfx"
+
+[node name="sfx_coin" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("9_b26j0")
+volume_db = -22.17
+pitch_scale = 0.91
+bus = &"Sfx"
+
+[node name="sfx_footsteps" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("10_n7ghd")
+volume_db = -26.74
+pitch_scale = 0.86
+bus = &"Sfx"
+
+[node name="sfx_blaster" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("11_nvl01")
+volume_db = -27.532
+pitch_scale = 1.27
+bus = &"Sfx"
+
+[node name="sfx_get_damage" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("12_ivps1")
+volume_db = -22.65
+pitch_scale = 1.1
+bus = &"Sfx"
+
+[node name="sfx_landing" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("13_urp6f")
+volume_db = -30.711
+pitch_scale = 1.3
+bus = &"Sfx"
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="timeout" from="coyote_timer" to="." method="_on_coyote_timer_timeout"]
+[connection signal="timeout" from="shooting_timer" to="." method="_on_shooting_timer_timeout"]

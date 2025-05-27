@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://bm3bcy27jsdbs"]
+
+[ext_resource type="PackedScene" uid="uid://ceef1nn0f8r20" path="res://assets/players_blasters/submachine_gunA.glb" id="1_ghk3x"]
+[ext_resource type="Script" uid="uid://dh6cjiv8gghvq" path="res://assets/players_blasters/weapons.gd" id="2_5cbp1"]
+[ext_resource type="Texture2D" uid="uid://6ssptpq3kxel" path="res://assets/players_blasters/blasters_textures/submachine_gunA.png" id="3_p81yb"]
+
+[node name="submachine_gunA" instance=ExtResource("1_ghk3x")]
+script = ExtResource("2_5cbp1")
+color = Color(0.8, 0.6232, 0.176, 1)
+texture = ExtResource("3_p81yb")
+weapon_stats = {
+"bullet_damage": 0.25,
+"bullet_lifetime": 0.5,
+"bullet_size": 0.35,
+"bullet_speed": 40.0,
+"bullet_z_size": 0.2,
+"shooting_speed": 0.1
+}
+
+[node name="Marker3D" type="Marker3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0251522, 0.0717087, 0.311698)
+
+[node name="Marker3D2" type="Marker3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0245171, 0.0717087, 0.311698)

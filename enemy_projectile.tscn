@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://bdgduu0qyekjr"]
+
+[ext_resource type="PackedScene" uid="uid://depkqvjqk5ywo" path="res://assets/enemies/enemy_projectile.glb" id="1_vpq67"]
+[ext_resource type="Script" uid="uid://cxyxacboicpmn" path="res://enemy_projectile.gd" id="2_ccnu0"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_oe428"]
+radius = 0.820525
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_howdh"]
+radius = 0.821889
+
+[node name="enemy_projectile" instance=ExtResource("1_vpq67")]
+collision_mask = 27
+script = ExtResource("2_ccnu0")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(0.9, 0, 0, 0, -3.93403e-08, -0.9, 0, 0.9, -3.93403e-08, 0, 0, 0)
+shape = SubResource("SphereShape3D_oe428")
+disabled = true
+
+[node name="Area3D" type="Area3D" parent="." index="2"]
+collision_layer = 24
+collision_mask = 27
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
+transform = Transform3D(1.01, 0, 0, 0, -4.41485e-08, -1.01, 0, 1.01, -4.41485e-08, 0, 0, 0)
+shape = SubResource("SphereShape3D_howdh")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

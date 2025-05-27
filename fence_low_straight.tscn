@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqpkgvy2f2e4d"]
+
+[ext_resource type="PackedScene" uid="uid://cbhc5jguhd022" path="res://assets/kenney_platofmer_kit/fence-low-straight.glb" id="1_4q321"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_galb0"]
+points = PackedVector3Array(-0.482632, 0, 0.373025, 0.47765, 0.3, 0.433013, 0.47765, 0.3, 0.373336, 0.482632, 0, 0.433324, -0.412674, 0.309462, 0.514264, -0.428484, 0.309462, 0.292085, 0.428484, -0.00790542, 0.292085, 0.412674, -0.00790542, 0.514264, -0.412674, -0.00790542, 0.514264, 0.428484, 0.309462, 0.292085, -0.428484, -0.00790542, 0.292085, 0.412674, 0.309462, 0.514264, -0.47765, 0.3, 0.433013, -0.467514, 0, 0.463474, 0.482632, 0, 0.373025, -0.47765, 0.3, 0.373336, 0.467514, 2.77556e-17, 0.463474, -0.482632, 0, 0.433324, 0.462688, 0.3, 0.462852, -0.462688, 0.3, 0.462852, -0.467514, -2.77556e-17, 0.342875, 0.467514, 2.77556e-17, 0.342875, -0.462688, 0.3, 0.343498, 0.462688, 0.3, 0.343498, 0.451925, 0.000156999, 0.478481, -0.451925, 0.000156999, 0.478481)
+
+[node name="fence-low-straight" instance=ExtResource("1_4q321")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_galb0")

@@ -1,0 +1,373 @@
+[gd_scene load_steps=10 format=3 uid="uid://b1ck7gyuwc3j"]
+
+[ext_resource type="Script" uid="uid://ldsoeeagomqq" path="res://ui.gd" id="1_8wla0"]
+[ext_resource type="Texture2D" uid="uid://bftuqcid7plfr" path="res://assets/ui/hud_heartFull.png" id="1_hfnsi"]
+[ext_resource type="Texture2D" uid="uid://b3gm7id5uvjep" path="res://assets/ui/hud_coins.png" id="3_t3o2l"]
+[ext_resource type="FontFile" uid="uid://t487k1nl68ba" path="res://assets/fonts/ConcertOne-Regular.ttf" id="4_rccx3"]
+[ext_resource type="PackedScene" uid="uid://cn2keqrit0o6y" path="res://diamonds_bar.tscn" id="5_8sh7u"]
+[ext_resource type="Shader" uid="uid://b6sc7mm03m1jh" path="res://vignete.tres" id="6_j5i3y"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0mjq7"]
+shader = ExtResource("6_j5i3y")
+shader_parameter/vignete_scale = 1.0
+
+[sub_resource type="Gradient" id="Gradient_n5ude"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_yoly6"]
+gradient = SubResource("Gradient_n5ude")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0, 1)
+
+[node name="ui" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8wla0")
+
+[node name="all_hearts" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 25.0
+offset_right = 12489.0
+offset_bottom = 2200.0
+scale = Vector2(0.04, 0.04)
+mouse_filter = 2
+
+[node name="upper_hearts_row" type="HBoxContainer" parent="all_hearts"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 26
+
+[node name="Control" type="Control" parent="all_hearts/upper_hearts_row"]
+custom_minimum_size = Vector2(1222.74, 0)
+layout_mode = 2
+size_flags_stretch_ratio = 0.1
+
+[node name="last_heart" type="TextureRect" parent="all_hearts/upper_hearts_row/Control"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_right = 1222.74
+offset_bottom = 1085.0
+pivot_offset = Vector2(611.37, 542.5)
+texture = ExtResource("1_hfnsi")
+stretch_mode = 5
+
+[node name="Control2" type="Control" parent="all_hearts/upper_hearts_row"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="2" type="TextureRect" parent="all_hearts/upper_hearts_row/Control2"]
+layout_mode = 2
+offset_right = 1222.74
+offset_bottom = 1085.0
+pivot_offset = Vector2(611.37, 542.5)
+texture = ExtResource("1_hfnsi")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Control3" type="Control" parent="all_hearts/upper_hearts_row"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="3" type="TextureRect" parent="all_hearts/upper_hearts_row/Control3"]
+layout_mode = 2
+offset_right = 1222.74
+offset_bottom = 1085.0
+pivot_offset = Vector2(611.37, 542.5)
+texture = ExtResource("1_hfnsi")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Control4" type="Control" parent="all_hearts/upper_hearts_row"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="4" type="TextureRect" parent="all_hearts/upper_hearts_row/Control4"]
+layout_mode = 2
+offset_right = 1222.74
+offset_bottom = 1085.0
+pivot_offset = Vector2(611.37, 542.5)
+texture = ExtResource("1_hfnsi")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Control5" type="Control" parent="all_hearts/upper_hearts_row"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="5" type="TextureRect" parent="all_hearts/upper_hearts_row/Control5"]
+layout_mode = 2
+offset_right = 1222.74
+offset_bottom = 1085.0
+pivot_offset = Vector2(611.37, 542.5)
+texture = ExtResource("1_hfnsi")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Control6" type="Control" parent="all_hearts/upper_hearts_row"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="6" type="TextureRect" parent="all_hearts/upper_hearts_row/Control6"]
+layout_mode = 2
+offset_right = 1222.74
+offset_bottom = 1085.0
+pivot_offset = Vector2(611.37, 542.5)
+texture = ExtResource("1_hfnsi")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Control7" type="Control" parent="all_hearts/upper_hearts_row"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="7" type="TextureRect" parent="all_hearts/upper_hearts_row/Control7"]
+layout_mode = 2
+offset_right = 1222.74
+offset_bottom = 1085.0
+pivot_offset = Vector2(611.37, 542.5)
+texture = ExtResource("1_hfnsi")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Control8" type="Control" parent="all_hearts/upper_hearts_row"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="8" type="TextureRect" parent="all_hearts/upper_hearts_row/Control8"]
+layout_mode = 2
+offset_right = 1222.74
+offset_bottom = 1085.0
+pivot_offset = Vector2(611.37, 542.5)
+texture = ExtResource("1_hfnsi")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Control9" type="Control" parent="all_hearts/upper_hearts_row"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="9" type="TextureRect" parent="all_hearts/upper_hearts_row/Control9"]
+layout_mode = 2
+offset_right = 1222.74
+offset_bottom = 1085.0
+pivot_offset = Vector2(611.37, 542.5)
+texture = ExtResource("1_hfnsi")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Control10" type="Control" parent="all_hearts/upper_hearts_row"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="10" type="TextureRect" parent="all_hearts/upper_hearts_row/Control10"]
+layout_mode = 2
+offset_right = 1222.74
+offset_bottom = 1085.0
+pivot_offset = Vector2(611.37, 542.5)
+texture = ExtResource("1_hfnsi")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="lower_hearts_row" type="HBoxContainer" parent="all_hearts"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 26
+
+[node name="Control" type="Control" parent="all_hearts/lower_hearts_row"]
+custom_minimum_size = Vector2(1222.74, 0)
+layout_mode = 2
+size_flags_stretch_ratio = 0.1
+
+[node name="1" type="TextureRect" parent="all_hearts/lower_hearts_row/Control"]
+layout_mode = 2
+offset_right = 1222.74
+offset_bottom = 1085.0
+pivot_offset = Vector2(611.37, 542.5)
+texture = ExtResource("1_hfnsi")
+stretch_mode = 5
+
+[node name="Control2" type="Control" parent="all_hearts/lower_hearts_row"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="2" type="TextureRect" parent="all_hearts/lower_hearts_row/Control2"]
+layout_mode = 2
+offset_right = 1222.74
+offset_bottom = 1085.0
+pivot_offset = Vector2(611.37, 542.5)
+texture = ExtResource("1_hfnsi")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Control3" type="Control" parent="all_hearts/lower_hearts_row"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="3" type="TextureRect" parent="all_hearts/lower_hearts_row/Control3"]
+layout_mode = 2
+offset_right = 1222.74
+offset_bottom = 1085.0
+pivot_offset = Vector2(611.37, 542.5)
+texture = ExtResource("1_hfnsi")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Control4" type="Control" parent="all_hearts/lower_hearts_row"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="4" type="TextureRect" parent="all_hearts/lower_hearts_row/Control4"]
+layout_mode = 2
+offset_right = 1222.74
+offset_bottom = 1085.0
+pivot_offset = Vector2(611.37, 542.5)
+texture = ExtResource("1_hfnsi")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Control5" type="Control" parent="all_hearts/lower_hearts_row"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="5" type="TextureRect" parent="all_hearts/lower_hearts_row/Control5"]
+layout_mode = 2
+offset_right = 1222.74
+offset_bottom = 1085.0
+pivot_offset = Vector2(611.37, 542.5)
+texture = ExtResource("1_hfnsi")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Control6" type="Control" parent="all_hearts/lower_hearts_row"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="6" type="TextureRect" parent="all_hearts/lower_hearts_row/Control6"]
+layout_mode = 2
+offset_right = 1222.74
+offset_bottom = 1085.0
+pivot_offset = Vector2(611.37, 542.5)
+texture = ExtResource("1_hfnsi")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Control7" type="Control" parent="all_hearts/lower_hearts_row"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="7" type="TextureRect" parent="all_hearts/lower_hearts_row/Control7"]
+layout_mode = 2
+offset_right = 1222.74
+offset_bottom = 1085.0
+pivot_offset = Vector2(611.37, 542.5)
+texture = ExtResource("1_hfnsi")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Control8" type="Control" parent="all_hearts/lower_hearts_row"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="8" type="TextureRect" parent="all_hearts/lower_hearts_row/Control8"]
+layout_mode = 2
+offset_right = 1222.74
+offset_bottom = 1085.0
+pivot_offset = Vector2(611.37, 542.5)
+texture = ExtResource("1_hfnsi")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Control9" type="Control" parent="all_hearts/lower_hearts_row"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="9" type="TextureRect" parent="all_hearts/lower_hearts_row/Control9"]
+layout_mode = 2
+offset_right = 1222.74
+offset_bottom = 1085.0
+pivot_offset = Vector2(611.37, 542.5)
+texture = ExtResource("1_hfnsi")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Control10" type="Control" parent="all_hearts/lower_hearts_row"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="10" type="TextureRect" parent="all_hearts/lower_hearts_row/Control10"]
+layout_mode = 2
+offset_right = 1222.74
+offset_bottom = 1085.0
+pivot_offset = Vector2(611.37, 542.5)
+texture = ExtResource("1_hfnsi")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="coins" type="HBoxContainer" parent="."]
+layout_mode = 2
+offset_left = 24.0
+offset_top = 127.0
+offset_right = 12649.0
+offset_bottom = 6743.0
+scale = Vector2(0.008, 0.008)
+theme_override_constants/separation = 1927
+
+[node name="Control" type="Control" parent="coins"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="coins_icon" type="TextureRect" parent="coins/Control"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(6500, 0)
+layout_mode = 2
+offset_right = 6500.0
+offset_bottom = 6616.0
+pivot_offset = Vector2(3250, 3308)
+texture = ExtResource("3_t3o2l")
+stretch_mode = 5
+
+[node name="coins_label" type="Label" parent="coins"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.190762, 0.190762, 0.190762, 1)
+theme_override_constants/outline_size = 1455
+theme_override_fonts/font = ExtResource("4_rccx3")
+theme_override_font_sizes/font_size = 4875
+text = "15"
+
+[node name="diamonds_bar" parent="." instance=ExtResource("5_8sh7u")]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -228.0
+offset_top = 28.0
+offset_right = -28.0
+offset_bottom = 90.0
+grow_horizontal = 0
+
+[node name="vignete" type="TextureRect" parent="."]
+visible = false
+z_index = 2
+material = SubResource("ShaderMaterial_0mjq7")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_yoly6")
+
+[node name="stun_screen" type="ColorRect" parent="."]
+visible = false
+z_index = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

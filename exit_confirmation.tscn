@@ -1,0 +1,209 @@
+[gd_scene load_steps=11 format=3 uid="uid://elfe5osdvmvl"]
+
+[ext_resource type="FontFile" uid="uid://f4gf616lj7hp" path="res://assets/fonts/Arista-Pro-Fat-trial.ttf" id="1_e226h"]
+[ext_resource type="Script" uid="uid://b072p66uc0dxa" path="res://exit_confirmation.gd" id="1_gn6qg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yn5xi"]
+bg_color = Color(0.61, 0.405243, 0.2867, 1)
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color(0.805454, 0.580209, 0.452657, 1)
+corner_radius_top_left = 70
+corner_radius_top_right = 70
+corner_radius_bottom_right = 70
+corner_radius_bottom_left = 70
+corner_detail = 2
+shadow_color = Color(0, 0, 0, 0.396078)
+shadow_size = 17
+
+[sub_resource type="FontVariation" id="FontVariation_bieeg"]
+base_font = ExtResource("1_e226h")
+baseline_offset = 0.15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rxkjj"]
+bg_color = Color(0.590438, 0.91, 0.5187, 1)
+border_width_left = 4
+border_width_bottom = 4
+border_color = Color(0.447695, 0.69, 0.3933, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 10.0
+expand_margin_top = 5.0
+expand_margin_right = 10.0
+expand_margin_bottom = 5.0
+shadow_color = Color(0.26, 0.26, 0.26, 0.6)
+shadow_size = 5
+shadow_offset = Vector2(-2, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ywm3w"]
+bg_color = Color(0.32549, 0.501961, 0.286275, 1)
+border_width_top = 4
+border_width_right = 4
+border_color = Color(0.443137, 0.678431, 0.388235, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 10.0
+expand_margin_top = 5.0
+expand_margin_right = 10.0
+expand_margin_bottom = 5.0
+shadow_size = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ekf2r"]
+bg_color = Color(0.473648, 0.73, 0.4161, 1)
+border_width_left = 4
+border_width_bottom = 4
+border_color = Color(0.343882, 0.53, 0.3021, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 10.0
+expand_margin_top = 5.0
+expand_margin_right = 10.0
+expand_margin_bottom = 5.0
+shadow_size = 5
+shadow_offset = Vector2(-2, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bl6ra"]
+bg_color = Color(0.87087, 0.91, 0.5187, 1)
+border_width_left = 4
+border_width_bottom = 4
+border_color = Color(0.66033, 0.69, 0.3933, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 10.0
+expand_margin_top = 5.0
+expand_margin_right = 10.0
+expand_margin_bottom = 5.0
+shadow_color = Color(0.26, 0.26, 0.26, 0.6)
+shadow_size = 5
+shadow_offset = Vector2(-2, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yle5x"]
+bg_color = Color(0.4785, 0.5, 0.285, 1)
+border_width_top = 4
+border_width_right = 4
+border_color = Color(0.65076, 0.68, 0.3876, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 10.0
+expand_margin_top = 5.0
+expand_margin_right = 10.0
+expand_margin_bottom = 5.0
+shadow_size = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tg1vm"]
+bg_color = Color(0.69861, 0.73, 0.4161, 1)
+border_width_left = 4
+border_width_bottom = 4
+border_color = Color(0.50721, 0.53, 0.3021, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 10.0
+expand_margin_top = 5.0
+expand_margin_right = 10.0
+expand_margin_bottom = 5.0
+shadow_size = 5
+shadow_offset = Vector2(-2, 2)
+
+[node name="popout_confirmation" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gn6qg")
+
+[node name="Panel" type="Panel" parent="."]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -243.0
+offset_top = -124.0
+offset_right = 243.0
+offset_bottom = 124.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_yn5xi")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 20.0
+offset_bottom = -39.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 35
+alignment = 1
+
+[node name="exit_question" type="Label" parent="Panel/VBoxContainer"]
+process_mode = 3
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.33, 0.21923, 0.1551, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("1_e226h")
+theme_override_font_sizes/font_size = 46
+text = "Are you sure
+ you want to exit?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 80
+
+[node name="exit_button" type="Button" parent="Panel/VBoxContainer/HBoxContainer"]
+process_mode = 3
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("FontVariation_bieeg")
+theme_override_font_sizes/font_size = 26
+theme_override_styles/hover = SubResource("StyleBoxFlat_rxkjj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ywm3w")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ekf2r")
+text = "Yes, exit"
+
+[node name="cancel_button" type="Button" parent="Panel/VBoxContainer/HBoxContainer"]
+process_mode = 3
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("FontVariation_bieeg")
+theme_override_font_sizes/font_size = 26
+theme_override_styles/hover = SubResource("StyleBoxFlat_bl6ra")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_yle5x")
+theme_override_styles/normal = SubResource("StyleBoxFlat_tg1vm")
+text = "No, cancel"
+
+[connection signal="button_down" from="Panel/VBoxContainer/HBoxContainer/exit_button" to="." method="_on_exit_button_button_down"]
+[connection signal="button_down" from="Panel/VBoxContainer/HBoxContainer/cancel_button" to="." method="_on_cancel_button_button_down"]

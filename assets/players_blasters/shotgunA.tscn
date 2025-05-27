@@ -1,0 +1,72 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4o8vx7eli2eu"]
+
+[ext_resource type="PackedScene" uid="uid://w5svx1smdecm" path="res://assets/players_blasters/shotgunA.glb" id="1_opmgx"]
+[ext_resource type="Texture2D" uid="uid://c1yacrgrl2mha" path="res://assets/players_blasters/blasters_textures/shotgunA.png" id="2_j2bct"]
+[ext_resource type="Script" uid="uid://dh6cjiv8gghvq" path="res://assets/players_blasters/weapons.gd" id="2_tgepp"]
+
+[node name="shotgunA" instance=ExtResource("1_opmgx")]
+script = ExtResource("2_tgepp")
+color = Color(0.529412, 0.368627, 1, 1)
+texture = ExtResource("2_j2bct")
+weapon_stats = {
+"bullet_damage": 0.36,
+"bullet_lifetime": 0.17,
+"bullet_size": 0.3,
+"bullet_speed": 25.0,
+"bullet_z_size": 0.5,
+"shooting_speed": 0.65
+}
+
+[node name="Marker3D" type="Marker3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0685608, 0.0534788, 0.317703)
+
+[node name="Marker3D2" type="Marker3D" parent="." index="2"]
+transform = Transform3D(-0.99945, 8.74228e-08, -0.0331552, -8.73747e-08, -1, -2.89852e-09, -0.0331552, 0, 0.99945, -0.0685608, 0.0534788, 0.317703)
+
+[node name="Marker3D6" type="Marker3D" parent="." index="3"]
+transform = Transform3D(0.99945, 0, 0.0331552, 0, 1, 0, -0.0331552, 0, 0.99945, -0.0685608, 0.0534788, 0.317703)
+
+[node name="Marker3D8" type="Marker3D" parent="." index="4"]
+transform = Transform3D(-4.36874e-08, -1, -1.44926e-09, 0.99945, -4.37114e-08, 0.0331552, -0.0331552, 0, 0.99945, -0.0685608, 0.0534788, 0.317703)
+
+[node name="Marker3D10" type="Marker3D" parent="." index="5"]
+transform = Transform3D(-4.36874e-08, 1, -1.44926e-09, -0.99945, -4.37114e-08, -0.0331552, -0.0331552, 0, 0.99945, -0.0685608, 0.0534788, 0.317703)
+
+[node name="Marker3D12" type="Marker3D" parent="." index="6"]
+transform = Transform3D(0.706718, -0.707107, 0.0234443, 0.706718, 0.707107, 0.0234443, -0.0331552, 0, 0.99945, -0.0685608, 0.0534788, 0.317703)
+
+[node name="Marker3D14" type="Marker3D" parent="." index="7"]
+transform = Transform3D(-0.706718, 0.707107, -0.0234443, -0.706718, -0.707107, -0.0234443, -0.0331552, 0, 0.99945, -0.0685608, 0.0534788, 0.317703)
+
+[node name="Marker3D16" type="Marker3D" parent="." index="8"]
+transform = Transform3D(0.706718, 0.707107, 0.0234443, -0.706718, 0.707107, -0.0234443, -0.0331552, 0, 0.99945, -0.0685608, 0.0534788, 0.317703)
+
+[node name="Marker3D18" type="Marker3D" parent="." index="9"]
+transform = Transform3D(-0.706718, -0.707107, -0.0234442, 0.706718, -0.707107, 0.0234443, -0.0331552, 0, 0.99945, -0.0685608, 0.0534788, 0.317703)
+
+[node name="Marker3D5" type="Marker3D" parent="." index="10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.071351, 0.0534788, 0.317703)
+
+[node name="Marker3D7" type="Marker3D" parent="." index="11"]
+transform = Transform3D(-0.99945, 8.74228e-08, -0.0331552, -8.73747e-08, -1, -2.89852e-09, -0.0331552, 0, 0.99945, 0.071351, 0.0534788, 0.317703)
+
+[node name="Marker3D9" type="Marker3D" parent="." index="12"]
+transform = Transform3D(0.99945, 0, 0.0331552, 0, 1, 0, -0.0331552, 0, 0.99945, 0.071351, 0.0534788, 0.317703)
+
+[node name="Marker3D11" type="Marker3D" parent="." index="13"]
+transform = Transform3D(-4.36874e-08, -1, -1.44926e-09, 0.99945, -4.37114e-08, 0.0331552, -0.0331552, 0, 0.99945, 0.071351, 0.0534788, 0.317703)
+
+[node name="Marker3D13" type="Marker3D" parent="." index="14"]
+transform = Transform3D(-4.36874e-08, 1, -1.44926e-09, -0.99945, -4.37114e-08, -0.0331552, -0.0331552, 0, 0.99945, 0.071351, 0.0534788, 0.317703)
+
+[node name="Marker3D15" type="Marker3D" parent="." index="15"]
+transform = Transform3D(0.706718, -0.707107, 0.0234443, 0.706718, 0.707107, 0.0234443, -0.0331552, 0, 0.99945, 0.071351, 0.0534788, 0.317703)
+
+[node name="Marker3D17" type="Marker3D" parent="." index="16"]
+transform = Transform3D(-0.706718, 0.707107, -0.0234443, -0.706718, -0.707107, -0.0234443, -0.0331552, 0, 0.99945, 0.071351, 0.0534788, 0.317703)
+
+[node name="Marker3D19" type="Marker3D" parent="." index="17"]
+transform = Transform3D(0.706718, 0.707107, 0.0234443, -0.706718, 0.707107, -0.0234443, -0.0331552, 0, 0.99945, 0.071351, 0.0534788, 0.317703)
+
+[node name="Marker3D20" type="Marker3D" parent="." index="18"]
+transform = Transform3D(-0.706718, -0.707107, -0.0234442, 0.706718, -0.707107, 0.0234443, -0.0331552, 0, 0.99945, 0.071351, 0.0534788, 0.317703)

@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://d4l74nc13t1j3"]
+
+[ext_resource type="Script" uid="uid://d4nyddkvy37wb" path="res://save_indicator.gd" id="1_iegur"]
+[ext_resource type="Texture2D" uid="uid://cjg2usmg136sd" path="res://assets/ui/saving_icon.png" id="2_2jowa"]
+[ext_resource type="FontFile" uid="uid://f4gf616lj7hp" path="res://assets/fonts/Arista-Pro-Fat-trial.ttf" id="3_u3u7n"]
+
+[sub_resource type="FontVariation" id="FontVariation_dpukg"]
+base_font = ExtResource("3_u3u7n")
+baseline_offset = 0.15
+
+[node name="save_indicator" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_iegur")
+
+[node name="margin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -41.0
+offset_right = 214.0
+grow_vertical = 0
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="HBoxContainer" type="HBoxContainer" parent="margin"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="margin/HBoxContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+texture = ExtResource("2_2jowa")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="margin/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = SubResource("FontVariation_dpukg")
+theme_override_font_sizes/font_size = 31
+text = "SAVING"

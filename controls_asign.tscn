@@ -1,0 +1,434 @@
+[gd_scene load_steps=14 format=3 uid="uid://sdab8d5gvgmt"]
+
+[ext_resource type="Script" uid="uid://nww6ku2urrg" path="res://controls_asign.gd" id="1_d775b"]
+[ext_resource type="FontFile" uid="uid://f4gf616lj7hp" path="res://assets/fonts/Arista-Pro-Fat-trial.ttf" id="2_5g74a"]
+[ext_resource type="FontFile" uid="uid://t487k1nl68ba" path="res://assets/fonts/ConcertOne-Regular.ttf" id="3_6fejp"]
+[ext_resource type="Texture2D" uid="uid://ubak7rfw4usl" path="res://assets/ui/restart_icon.svg" id="4_xl35b"]
+
+[sub_resource type="FontVariation" id="FontVariation_t3wvw"]
+base_font = ExtResource("2_5g74a")
+baseline_offset = 0.25
+
+[sub_resource type="FontVariation" id="FontVariation_yuba2"]
+base_font = ExtResource("3_6fejp")
+spacing_top = -3
+spacing_bottom = -3
+baseline_offset = 0.075
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4v7xt"]
+bg_color = Color(0.667787, 0.76, 0.3648, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.772787, 0.88, 0.5016, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2gudj"]
+bg_color = Color(0.701961, 0.8, 0.454902, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.564706, 0.639216, 0.309804, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dg45r"]
+bg_color = Color(0.565627, 0.640653, 0.307894, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.702533, 0.8, 0.456, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="FontVariation" id="FontVariation_auyti"]
+base_font = ExtResource("2_5g74a")
+baseline_offset = 0.15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_knuxk"]
+bg_color = Color(0.64322, 0.87, 0.2784, 1)
+border_width_left = 9
+border_width_top = 9
+border_width_right = 9
+border_width_bottom = 9
+border_color = Color(0.51485, 0.7, 0.217, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+expand_margin_left = 4.0
+expand_margin_top = 4.0
+expand_margin_right = 4.0
+expand_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rrxnf"]
+bg_color = Color(0.443137, 0.6, 0.184314, 1)
+border_width_left = 9
+border_width_top = 9
+border_width_right = 9
+border_width_bottom = 9
+border_color = Color(0.521569, 0.756863, 0.152941, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_07xvi"]
+bg_color = Color(0.521111, 0.756087, 0.153467, 1)
+border_width_left = 9
+border_width_top = 9
+border_width_right = 9
+border_width_bottom = 9
+border_color = Color(0.354333, 0.5, 0.12, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[node name="controls_asign" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -579.0
+offset_bottom = -330.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_d775b")
+
+[node name="all_controls_container" type="HBoxContainer" parent="."]
+layout_mode = 2
+offset_top = -14.0
+offset_right = 570.0
+offset_bottom = 299.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 18
+
+[node name="left_part_container" type="VBoxContainer" parent="all_controls_container"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 13
+alignment = 1
+
+[node name="forward" type="HBoxContainer" parent="all_controls_container/left_part_container"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="forward_label" type="Label" parent="all_controls_container/left_part_container/forward"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 2.24
+theme_override_colors/font_color = Color(0.909804, 0.862745, 0.784314, 1)
+theme_override_fonts/font = SubResource("FontVariation_t3wvw")
+theme_override_font_sizes/font_size = 28
+text = "FORWARD"
+vertical_alignment = 1
+
+[node name="forward_button" type="Button" parent="all_controls_container/left_part_container/forward"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.69
+focus_mode = 0
+theme_override_fonts/font = SubResource("FontVariation_yuba2")
+theme_override_font_sizes/font_size = 21
+theme_override_styles/hover = SubResource("StyleBoxFlat_4v7xt")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2gudj")
+theme_override_styles/normal = SubResource("StyleBoxFlat_dg45r")
+text = "W"
+autowrap_mode = 2
+
+[node name="back" type="HBoxContainer" parent="all_controls_container/left_part_container"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="back_label" type="Label" parent="all_controls_container/left_part_container/back"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 2.24
+theme_override_colors/font_color = Color(0.909804, 0.862745, 0.784314, 1)
+theme_override_fonts/font = SubResource("FontVariation_t3wvw")
+theme_override_font_sizes/font_size = 28
+text = "BACK"
+vertical_alignment = 1
+
+[node name="back_button" type="Button" parent="all_controls_container/left_part_container/back"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.69
+focus_mode = 0
+theme_override_fonts/font = SubResource("FontVariation_yuba2")
+theme_override_font_sizes/font_size = 21
+theme_override_styles/hover = SubResource("StyleBoxFlat_4v7xt")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2gudj")
+theme_override_styles/normal = SubResource("StyleBoxFlat_dg45r")
+text = "S"
+autowrap_mode = 2
+
+[node name="left" type="HBoxContainer" parent="all_controls_container/left_part_container"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="left_label" type="Label" parent="all_controls_container/left_part_container/left"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 2.24
+theme_override_colors/font_color = Color(0.909804, 0.862745, 0.784314, 1)
+theme_override_fonts/font = SubResource("FontVariation_t3wvw")
+theme_override_font_sizes/font_size = 28
+text = "LEFT"
+vertical_alignment = 1
+
+[node name="left_button" type="Button" parent="all_controls_container/left_part_container/left"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.69
+focus_mode = 0
+theme_override_fonts/font = SubResource("FontVariation_yuba2")
+theme_override_font_sizes/font_size = 21
+theme_override_styles/hover = SubResource("StyleBoxFlat_4v7xt")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2gudj")
+theme_override_styles/normal = SubResource("StyleBoxFlat_dg45r")
+text = "A"
+autowrap_mode = 2
+
+[node name="right" type="HBoxContainer" parent="all_controls_container/left_part_container"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="right_label" type="Label" parent="all_controls_container/left_part_container/right"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 2.24
+theme_override_colors/font_color = Color(0.909804, 0.862745, 0.784314, 1)
+theme_override_fonts/font = SubResource("FontVariation_t3wvw")
+theme_override_font_sizes/font_size = 28
+text = "RIGHT"
+vertical_alignment = 1
+
+[node name="right_button" type="Button" parent="all_controls_container/left_part_container/right"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.69
+focus_mode = 0
+theme_override_fonts/font = SubResource("FontVariation_yuba2")
+theme_override_font_sizes/font_size = 21
+theme_override_styles/hover = SubResource("StyleBoxFlat_4v7xt")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2gudj")
+theme_override_styles/normal = SubResource("StyleBoxFlat_dg45r")
+text = "D"
+autowrap_mode = 2
+
+[node name="jump" type="HBoxContainer" parent="all_controls_container/left_part_container"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="jump_label" type="Label" parent="all_controls_container/left_part_container/jump"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 2.24
+theme_override_colors/font_color = Color(0.909804, 0.862745, 0.784314, 1)
+theme_override_fonts/font = SubResource("FontVariation_t3wvw")
+theme_override_font_sizes/font_size = 28
+text = "JUMP"
+vertical_alignment = 1
+
+[node name="jump_button" type="Button" parent="all_controls_container/left_part_container/jump"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.69
+focus_mode = 0
+theme_override_fonts/font = SubResource("FontVariation_yuba2")
+theme_override_font_sizes/font_size = 21
+theme_override_styles/hover = SubResource("StyleBoxFlat_4v7xt")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2gudj")
+theme_override_styles/normal = SubResource("StyleBoxFlat_dg45r")
+text = "SPACE"
+autowrap_mode = 2
+
+[node name="restart_controls_button" type="Button" parent="all_controls_container/left_part_container"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("FontVariation_auyti")
+theme_override_font_sizes/font_size = 21
+theme_override_styles/hover = SubResource("StyleBoxFlat_knuxk")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rrxnf")
+theme_override_styles/normal = SubResource("StyleBoxFlat_07xvi")
+text = "RESTART CONTROLS  "
+icon = ExtResource("4_xl35b")
+expand_icon = true
+
+[node name="right_part_container" type="VBoxContainer" parent="all_controls_container"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 13
+
+[node name="run" type="HBoxContainer" parent="all_controls_container/right_part_container"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="run_label" type="Label" parent="all_controls_container/right_part_container/run"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 0.28
+theme_override_colors/font_color = Color(0.909804, 0.862745, 0.784314, 1)
+theme_override_fonts/font = SubResource("FontVariation_t3wvw")
+theme_override_font_sizes/font_size = 28
+text = "RUN"
+vertical_alignment = 1
+
+[node name="run_button" type="Button" parent="all_controls_container/right_part_container/run"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.4
+focus_mode = 0
+theme_override_fonts/font = SubResource("FontVariation_yuba2")
+theme_override_font_sizes/font_size = 21
+theme_override_styles/hover = SubResource("StyleBoxFlat_4v7xt")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2gudj")
+theme_override_styles/normal = SubResource("StyleBoxFlat_dg45r")
+text = "CTRL"
+autowrap_mode = 2
+
+[node name="crouch" type="HBoxContainer" parent="all_controls_container/right_part_container"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="crouch_label" type="Label" parent="all_controls_container/right_part_container/crouch"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 0.28
+theme_override_colors/font_color = Color(0.909804, 0.862745, 0.784314, 1)
+theme_override_fonts/font = SubResource("FontVariation_t3wvw")
+theme_override_font_sizes/font_size = 28
+text = "CROUCH"
+vertical_alignment = 1
+
+[node name="crouch_button" type="Button" parent="all_controls_container/right_part_container/crouch"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.4
+focus_mode = 0
+theme_override_fonts/font = SubResource("FontVariation_yuba2")
+theme_override_font_sizes/font_size = 21
+theme_override_styles/hover = SubResource("StyleBoxFlat_4v7xt")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2gudj")
+theme_override_styles/normal = SubResource("StyleBoxFlat_dg45r")
+text = "SHIFT"
+autowrap_mode = 2
+
+[node name="shoot" type="HBoxContainer" parent="all_controls_container/right_part_container"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="shoot_label" type="Label" parent="all_controls_container/right_part_container/shoot"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 0.28
+theme_override_colors/font_color = Color(0.909804, 0.862745, 0.784314, 1)
+theme_override_fonts/font = SubResource("FontVariation_t3wvw")
+theme_override_font_sizes/font_size = 28
+text = "SHOOT"
+vertical_alignment = 1
+
+[node name="shoot_button" type="Button" parent="all_controls_container/right_part_container/shoot"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.4
+focus_mode = 0
+theme_override_fonts/font = SubResource("FontVariation_yuba2")
+theme_override_font_sizes/font_size = 21
+theme_override_styles/hover = SubResource("StyleBoxFlat_4v7xt")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2gudj")
+theme_override_styles/normal = SubResource("StyleBoxFlat_dg45r")
+text = "LEFT CLICK"
+autowrap_mode = 2
+
+[node name="change_weapon" type="HBoxContainer" parent="all_controls_container/right_part_container"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="change_weapon_label" type="Label" parent="all_controls_container/right_part_container/change_weapon"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 0.28
+theme_override_colors/font_color = Color(0.909804, 0.862745, 0.784314, 1)
+theme_override_fonts/font = SubResource("FontVariation_t3wvw")
+theme_override_font_sizes/font_size = 28
+text = "CHANGE
+WEAPON"
+vertical_alignment = 1
+
+[node name="change_weapon_button" type="Button" parent="all_controls_container/right_part_container/change_weapon"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.4
+focus_mode = 0
+theme_override_fonts/font = SubResource("FontVariation_yuba2")
+theme_override_font_sizes/font_size = 21
+theme_override_styles/hover = SubResource("StyleBoxFlat_4v7xt")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2gudj")
+theme_override_styles/normal = SubResource("StyleBoxFlat_dg45r")
+text = "E"
+autowrap_mode = 2
+
+[node name="Control" type="Control" parent="all_controls_container/right_part_container"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.75
+
+[connection signal="pressed" from="all_controls_container/left_part_container/forward/forward_button" to="." method="_on_forward_button_pressed"]
+[connection signal="pressed" from="all_controls_container/left_part_container/back/back_button" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="all_controls_container/left_part_container/left/left_button" to="." method="_on_left_button_pressed"]
+[connection signal="pressed" from="all_controls_container/left_part_container/right/right_button" to="." method="_on_right_button_pressed"]
+[connection signal="pressed" from="all_controls_container/left_part_container/jump/jump_button" to="." method="_on_jump_button_pressed"]
+[connection signal="pressed" from="all_controls_container/left_part_container/restart_controls_button" to="." method="_on_restart_controls_button_pressed"]
+[connection signal="pressed" from="all_controls_container/right_part_container/run/run_button" to="." method="_on_run_button_pressed"]
+[connection signal="pressed" from="all_controls_container/right_part_container/crouch/crouch_button" to="." method="_on_crouch_button_pressed"]
+[connection signal="pressed" from="all_controls_container/right_part_container/shoot/shoot_button" to="." method="_on_shoot_button_pressed"]
+[connection signal="pressed" from="all_controls_container/right_part_container/change_weapon/change_weapon_button" to="." method="_on_change_weapon_button_pressed"]

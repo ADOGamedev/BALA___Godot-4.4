@@ -1,0 +1,60 @@
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://cr8jd28wpq2vl"]
+
+[ext_resource type="FontFile" uid="uid://t487k1nl68ba" path="res://assets/fonts/ConcertOne-Regular.ttf" id="1_m5jav"]
+[ext_resource type="Texture2D" uid="uid://guinc1s2hwod" path="res://assets/ui/optionbutton_arrow.png" id="2_boq5d"]
+[ext_resource type="StyleBox" uid="uid://c34kdbvvocjai" path="res://assets/ui/options_menu.tres" id="3_7jjbi"]
+
+[sub_resource type="FontVariation" id="FontVariation_lwys0"]
+base_font = ExtResource("1_m5jav")
+spacing_bottom = 10
+baseline_offset = 0.15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iems2"]
+bg_color = Color(0.71, 0.56587, 0.2982, 1)
+border_width_left = 15
+border_width_top = 15
+border_width_right = 15
+border_width_bottom = 15
+border_color = Color(0.53, 0.42241, 0.2226, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="FontVariation" id="FontVariation_jonkc"]
+base_font = ExtResource("1_m5jav")
+baseline_offset = -0.015
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s787i"]
+bg_color = Color(0.79, 0.62963, 0.3318, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+shadow_color = Color(0, 0, 0, 0)
+
+[resource]
+OptionButton/constants/arrow_margin = 20
+OptionButton/constants/h_separation = 0
+OptionButton/font_sizes/font_size = 32
+OptionButton/fonts/font = SubResource("FontVariation_lwys0")
+OptionButton/icons/arrow = ExtResource("2_boq5d")
+OptionButton/icons/icon = null
+OptionButton/styles/hover = SubResource("StyleBoxFlat_iems2")
+OptionButton/styles/normal = null
+OptionButton/styles/pressed = ExtResource("3_7jjbi")
+PopupMenu/font_sizes/font_size = 24
+PopupMenu/fonts/font = SubResource("FontVariation_jonkc")
+PopupMenu/styles/hover = SubResource("StyleBoxFlat_s787i")
+PopupMenu/styles/labeled_separator_left = null
+PopupMenu/styles/labeled_separator_right = null
+PopupMenu/styles/panel = ExtResource("3_7jjbi")
+PopupMenu/styles/separator = null
+PopupPanel/colors/title_color = Color(0, 0, 0, 0)
+PopupPanel/colors/title_outline_modulate = Color(0, 0, 0, 0)
+PopupPanel/fonts/title_font = null
+PopupPanel/styles/panel = null

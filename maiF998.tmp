@@ -1,0 +1,97 @@
+[gd_scene load_steps=9 format=3 uid="uid://dmouq63i565vo"]
+
+[ext_resource type="Script" path="res://main_menu.gd" id="1_7h4cs"]
+[ext_resource type="Texture2D" uid="uid://c6o5q7yltt0n7" path="res://assets/ui/bala_logo.png" id="1_kend1"]
+[ext_resource type="FontFile" uid="uid://f4gf616lj7hp" path="res://assets/fonts/Arista-Pro-Fat-trial.ttf" id="2_7a6bw"]
+
+[sub_resource type="FontVariation" id="FontVariation_ku06o"]
+base_font = ExtResource("2_7a6bw")
+baseline_offset = 0.15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_td8gl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iyqh0"]
+
+[sub_resource type="FontVariation" id="FontVariation_fnke6"]
+base_font = ExtResource("2_7a6bw")
+baseline_offset = 0.15
+
+[sub_resource type="FontVariation" id="FontVariation_ttfes"]
+base_font = ExtResource("2_7a6bw")
+baseline_offset = 0.15
+
+[node name="main_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7h4cs")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -395.0
+offset_right = 250.0
+offset_bottom = 105.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_kend1")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -177.0
+offset_top = -262.0
+offset_right = 177.0
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 15
+
+[node name="play" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_hover_color = Color(1, 1, 0.533333, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.990333, 0.71, 1)
+theme_override_fonts/font = SubResource("FontVariation_ku06o")
+theme_override_font_sizes/font_size = 85
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_td8gl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_iyqh0")
+text = "PLAY"
+flat = true
+
+[node name="options" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_hover_color = Color(0, 0.952941, 0.517647, 1)
+theme_override_colors/font_pressed_color = Color(0.627, 0.95, 0.80465, 1)
+theme_override_fonts/font = SubResource("FontVariation_fnke6")
+theme_override_font_sizes/font_size = 85
+text = "OPTIONS
+"
+flat = true
+
+[node name="exit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_hover_color = Color(0.95, 0.456, 0.456, 1)
+theme_override_colors/font_pressed_color = Color(0.95, 0.627, 0.627, 1)
+theme_override_fonts/font = SubResource("FontVariation_ttfes")
+theme_override_font_sizes/font_size = 61
+text = "EXIT"
+flat = true
+
+[connection signal="pressed" from="VBoxContainer/play" to="." method="_on_play_pressed"]
+[connection signal="button_down" from="VBoxContainer/exit" to="." method="_on_exit_button_down"]

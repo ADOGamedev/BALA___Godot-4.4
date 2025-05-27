@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://fdnctvq8by32"]
+
+[ext_resource type="PackedScene" uid="uid://babkeyrp54n21" path="res://assets/kenney_platofmer_kit/chest.glb" id="1_54138"]
+[ext_resource type="Script" uid="uid://bmgug2gdj0qa3" path="res://chest.gd" id="2_wwdh0"]
+[ext_resource type="PackedScene" uid="uid://bv1o43t8m3j01" path="res://lock.tscn" id="3_dkkln"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vxls1"]
+size = Vector3(0.5, 0.459717, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_elpfb"]
+size = Vector3(0.811157, 0.610229, 0.544678)
+
+[node name="chest" groups=["chests"] instance=ExtResource("1_54138")]
+script = ExtResource("2_wwdh0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.225464, 0)
+shape = SubResource("BoxShape3D_vxls1")
+
+[node name="Area3D" type="Area3D" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.928677)
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0213013, 0.305115, -0.383618)
+shape = SubResource("BoxShape3D_elpfb")
+
+[node name="lock" parent="." index="4" instance=ExtResource("3_dkkln")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0.219786)
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

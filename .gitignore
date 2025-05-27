@@ -1,0 +1,9 @@
+.DS_Store
+.idea
+*.log
+tmp/
+
+.godot
+.import
+*.tex
+*.pdf

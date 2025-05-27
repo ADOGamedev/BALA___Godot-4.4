@@ -1,0 +1,49 @@
+[gd_scene load_steps=2 format=3 uid="uid://bbh3cry7sitpl"]
+
+[ext_resource type="PackedScene" uid="uid://df3edy1hwy874" path="res://level_box.tscn" id="1_0kpqu"]
+
+[node name="GridContainer" type="GridContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/h_separation = 75
+theme_override_constants/v_separation = 17
+columns = 5
+
+[node name="level_box" parent="." instance=ExtResource("1_0kpqu")]
+layout_mode = 2
+
+[node name="level_box3" parent="." instance=ExtResource("1_0kpqu")]
+layout_mode = 2
+level_num = 3
+
+[node name="level_box5" parent="." instance=ExtResource("1_0kpqu")]
+layout_mode = 2
+level_num = 5
+
+[node name="level_box7" parent="." instance=ExtResource("1_0kpqu")]
+layout_mode = 2
+level_num = 7
+
+[node name="level_box9" parent="." instance=ExtResource("1_0kpqu")]
+layout_mode = 2
+level_num = 9
+
+[node name="level_box2" parent="." instance=ExtResource("1_0kpqu")]
+layout_mode = 2
+level_num = 2
+
+[node name="level_box4" parent="." instance=ExtResource("1_0kpqu")]
+layout_mode = 2
+level_num = 4
+
+[node name="level_box6" parent="." instance=ExtResource("1_0kpqu")]
+layout_mode = 2
+level_num = 6
+
+[node name="level_box8" parent="." instance=ExtResource("1_0kpqu")]
+layout_mode = 2
+level_num = 8
+
+[node name="level_box10" parent="." instance=ExtResource("1_0kpqu")]
+layout_mode = 2
+level_num = 10

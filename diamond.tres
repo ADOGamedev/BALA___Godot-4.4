@@ -1,0 +1,49 @@
+[gd_resource type="VisualShader" load_steps=4 format=3 uid="uid://8ii0yti5kvye"]
+
+[sub_resource type="VisualShaderNodeColorConstant" id="VisualShaderNodeColorConstant_a6gb3"]
+constant = Color(0, 0.644, 0.84, 1)
+
+[sub_resource type="VisualShaderNodeColorConstant" id="VisualShaderNodeColorConstant_4xvbx"]
+constant = Color(0, 0.126, 0.84, 1)
+
+[sub_resource type="VisualShaderNodeFloatConstant" id="VisualShaderNodeFloatConstant_i1mx0"]
+constant = 0.3
+
+[resource]
+code = "shader_type spatial;
+render_mode blend_mix, depth_draw_opaque, cull_disabled, diffuse_lambert, specular_schlick_ggx;
+
+
+
+
+void fragment() {
+// ColorConstant:2
+	vec4 n_out2p0 = vec4(0.000000, 0.644000, 0.840000, 1.000000);
+
+
+// FloatConstant:4
+	float n_out4p0 = 0.300000;
+
+
+// ColorConstant:3
+	vec4 n_out3p0 = vec4(0.000000, 0.126000, 0.840000, 1.000000);
+
+
+// Output:0
+	ALBEDO = vec3(n_out2p0.xyz);
+	ALPHA = n_out4p0;
+	ROUGHNESS = n_out4p0;
+	EMISSION = vec3(n_out3p0.xyz);
+	RIM = n_out2p0.x;
+
+
+}
+"
+modes/cull = 2
+nodes/fragment/2/node = SubResource("VisualShaderNodeColorConstant_a6gb3")
+nodes/fragment/2/position = Vector2(40, 320)
+nodes/fragment/3/node = SubResource("VisualShaderNodeColorConstant_4xvbx")
+nodes/fragment/3/position = Vector2(40, 200)
+nodes/fragment/4/node = SubResource("VisualShaderNodeFloatConstant_i1mx0")
+nodes/fragment/4/position = Vector2(40, 40)
+nodes/fragment/connections = PackedInt32Array(3, 0, 0, 5, 3, 0, 0, 11, 2, 0, 0, 11, 2, 0, 0, 0, 4, 0, 0, 1, 4, 0, 0, 3)

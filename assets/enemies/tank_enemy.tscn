@@ -1,0 +1,431 @@
+[gd_scene load_steps=44 format=3 uid="uid://ct4c4rfuj2ulc"]
+
+[ext_resource type="PackedScene" uid="uid://csuyqa6tygqhl" path="res://assets/enemies/tank_enemy.glb" id="1_4y2cn"]
+[ext_resource type="ArrayMesh" uid="uid://dssc4xygd45qu" path="res://assets/enemies/exclamation_mark.obj" id="2_7txkg"]
+[ext_resource type="Script" uid="uid://calobhk2d4qtc" path="res://assets/enemies/tank_enemy.gd" id="2_lux0u"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lux0u"]
+radius = 0.254123
+height = 3.24236
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tje64"]
+radius = 0.510772
+height = 5.46603
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_7txkg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tje64"]
+resource_name = "Material.021"
+cull_mode = 2
+albedo_color = Color(0.210958, 0.253159, 0.205337, 1)
+metallic = 0.853211
+roughness = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wrpdt"]
+resource_name = "Material.021"
+cull_mode = 2
+albedo_color = Color(0.210958, 0.253159, 0.205337, 1)
+metallic = 0.853211
+roughness = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vgv4l"]
+resource_name = "Material.021"
+cull_mode = 2
+albedo_color = Color(0.210958, 0.253159, 0.205337, 1)
+metallic = 0.853211
+roughness = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bqwce"]
+resource_name = "Material.021"
+cull_mode = 2
+albedo_color = Color(0.210958, 0.253159, 0.205337, 1)
+metallic = 0.853211
+roughness = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7txkg"]
+resource_name = "Material.058"
+cull_mode = 2
+albedo_color = Color(0.525307, 0.525307, 0.525307, 1)
+metallic = 1.0
+roughness = 0.444882
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lux0u"]
+resource_name = "Material.051"
+cull_mode = 2
+albedo_color = Color(0.263745, 0.316447, 0.256713, 1)
+metallic = 0.798093
+roughness = 0.531496
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7o6aq"]
+resource_name = "Material.050"
+cull_mode = 2
+albedo_color = Color(0.176467, 0.176467, 0.176467, 1)
+metallic = 0.853211
+roughness = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iwd8d"]
+resource_name = "Material.050"
+cull_mode = 2
+albedo_color = Color(0.176467, 0.176467, 0.176467, 1)
+metallic = 0.853211
+roughness = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2qhjk"]
+resource_name = "Material.050"
+cull_mode = 2
+albedo_color = Color(0.176467, 0.176467, 0.176467, 1)
+metallic = 0.853211
+roughness = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8pqfh"]
+resource_name = "Material.023"
+cull_mode = 2
+albedo_color = Color(0.263745, 0.316447, 0.256713, 1)
+metallic = 0.798093
+roughness = 0.531496
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a0hmq"]
+resource_name = "Material.023"
+cull_mode = 2
+albedo_color = Color(0.263745, 0.316447, 0.256713, 1)
+metallic = 0.798093
+roughness = 0.531496
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qbafp"]
+resource_name = "Material.052"
+cull_mode = 2
+albedo_color = Color(0.595041, 0.497786, 0, 1)
+roughness = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_msgi5"]
+resource_name = "Material.052"
+cull_mode = 2
+albedo_color = Color(0.595041, 0.497786, 0, 1)
+roughness = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m2nfq"]
+resource_name = "Material.052"
+cull_mode = 2
+albedo_color = Color(0.595041, 0.497786, 0, 1)
+roughness = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j4t60"]
+resource_name = "Material.052"
+cull_mode = 2
+albedo_color = Color(0.595041, 0.497786, 0, 1)
+roughness = 0.5
+
+[sub_resource type="Animation" id="Animation_lux0u"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Armature/Skeleton3D/Cylinder_014:surface_material_override/0:albedo_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.263745, 0.316447, 0.256713, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_7txkg"]
+resource_name = "explode"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Armature/Skeleton3D/Cylinder_014:surface_material_override/0:albedo_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.266667, 0.5, 0.733333, 0.966667, 1.16667, 1.36667, 1.56667, 1.73333, 1.9, 2.06667, 2.23333, 2.36667, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.263745, 0.316447, 0.256713, 1), Color(0.71, 0.71, 0.71, 1), Color(0.263745, 0.316447, 0.256713, 1), Color(0.709804, 0.670588, 0.596078, 1), Color(0.263745, 0.316447, 0.256713, 1), Color(0.709804, 0.670588, 0.596078, 1), Color(0.263745, 0.316447, 0.256713, 1), Color(0.709804, 0.670588, 0.596078, 1), Color(0.263745, 0.316447, 0.256713, 1), Color(0.709804, 0.670588, 0.596078, 1), Color(0.263745, 0.316447, 0.256713, 1), Color(0.709804, 0.670588, 0.596078, 1), Color(0.263745, 0.316447, 0.256713, 1), Color(0.709804, 0.670588, 0.596078, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tje64"]
+_data = {
+&"RESET": SubResource("Animation_lux0u"),
+&"explode": SubResource("Animation_7txkg")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4y2cn"]
+animation = &"explode"
+
+[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_7txkg"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_lux0u"]
+animation = &"walk"
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_tje64"]
+nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_7txkg")
+nodes/TimeScale/position = Vector2(220, 60)
+nodes/output/position = Vector2(360, 100)
+nodes/walk/node = SubResource("AnimationNodeAnimation_lux0u")
+nodes/walk/position = Vector2(40, 60)
+node_connections = [&"TimeScale", 0, &"walk", &"output", 0, &"TimeScale"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_wrpdt"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_sa3nx"]
+advance_mode = 2
+advance_condition = &"next_to_player"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_vgv4l"]
+xfade_time = 1.0
+advance_mode = 2
+advance_condition = &"not_next_to_player"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_bqwce"]
+states/Start/position = Vector2(245, 103)
+states/explode/node = SubResource("AnimationNodeAnimation_4y2cn")
+states/explode/position = Vector2(577, 100)
+states/walk/node = SubResource("AnimationNodeBlendTree_tje64")
+states/walk/position = Vector2(393, 100)
+transitions = ["Start", "walk", SubResource("AnimationNodeStateMachineTransition_wrpdt"), "walk", "explode", SubResource("AnimationNodeStateMachineTransition_sa3nx"), "explode", "walk", SubResource("AnimationNodeStateMachineTransition_vgv4l")]
+graph_offset = Vector2(-27, 21.6558)
+
+[sub_resource type="Animation" id="Animation_t82i6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_jwdev"]
+resource_name = "exclamation_mark"
+length = 1.15
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3, 1, 1.13333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.3, 0.3, 0.3), Vector3(0.2, 0.2, 0.2), Vector3(0.2, 0.2, 0.2), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 5, 0), Vector3(0, 7.4, 0), Vector3(0, 7, 0), Vector3(0, 7, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vq8e1"]
+_data = {
+&"RESET": SubResource("Animation_t82i6"),
+&"exclamation_mark": SubResource("Animation_jwdev")
+}
+
+[sub_resource type="Curve" id="Curve_tje64"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.556989, 1), 0.0, 0.0, 0, 0, Vector2(0.860215, 0.604943), -3.37466, -3.37466, 0, 0, Vector2(0.991398, 0.0360616), -6.32748, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_ifcgr"]
+curve = SubResource("Curve_tje64")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_wrpdt"]
+angle_min = 1.07288e-05
+angle_max = 1.07288e-05
+spread = 180.0
+initial_velocity_min = 1.0
+initial_velocity_max = 5.0
+gravity = Vector3(0, 4, 0)
+scale_min = 0.6
+scale_max = 1.2
+scale_curve = SubResource("CurveTexture_ifcgr")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sa3nx"]
+resource_name = "Material.058"
+cull_mode = 2
+albedo_color = Color(0.525307, 0.525307, 0.525307, 1)
+metallic = 1.0
+roughness = 0.444882
+
+[sub_resource type="SphereMesh" id="SphereMesh_vgv4l"]
+material = SubResource("StandardMaterial3D_sa3nx")
+radius = 0.05
+height = 0.1
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_bqwce"]
+angle_min = 1.07288e-05
+angle_max = 1.07288e-05
+spread = 180.0
+initial_velocity_min = 1.0
+initial_velocity_max = 5.0
+gravity = Vector3(0, 4, 0)
+scale_min = 1.6
+scale_max = 2.1
+scale_curve = SubResource("CurveTexture_ifcgr")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2lgl0"]
+resource_name = "Material.051"
+cull_mode = 2
+albedo_color = Color(0.263745, 0.316447, 0.256713, 1)
+metallic = 0.798093
+roughness = 0.531496
+
+[sub_resource type="SphereMesh" id="SphereMesh_7o6aq"]
+material = SubResource("StandardMaterial3D_2lgl0")
+radius = 0.035
+height = 0.07
+
+[node name="tank_enemy" groups=["enemies"] instance=ExtResource("1_4y2cn")]
+collision_layer = 8
+collision_mask = 27
+script = ExtResource("2_lux0u")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="0"]
+transform = Transform3D(1.54606, 0, 0, 0, 1.54606, 0, 0, 0, 1.54606, 0.0233994, 2.5882, 0.0179882)
+shape = SubResource("CapsuleShape3D_lux0u")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1.54606, 0, 0, 0, 1.54606, 0, 0, 0, 1.54606, 0.0233994, 6.77887, 0.0179882)
+shape = SubResource("CapsuleShape3D_tje64")
+
+[node name="explosion_area" type="Area3D" parent="." index="2"]
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="explosion_area" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.20051, 0)
+shape = SubResource("SphereShape3D_7txkg")
+
+[node name="Cylinder_015" parent="." index="3"]
+visible = false
+
+[node name="Armature" parent="." index="4"]
+transform = Transform3D(-0.612117, 0, 5.35129e-08, 0, 0.612117, 0, -5.35129e-08, 0, -0.612117, 0.0531736, 0.240186, 0.0207734)
+
+[node name="RayCast3D" type="RayCast3D" parent="Armature" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0566807, 0.0916283, 0.960384)
+
+[node name="Skeleton3D" parent="Armature" index="1"]
+unique_name_in_owner = true
+bones/12/rotation = Quaternion(-3.07689e-08, -3.00038e-09, -0.0992512, 0.995062)
+bones/15/rotation = Quaternion(2.70708e-08, 2.4963e-09, -0.0557526, 0.998445)
+
+[node name="Cube" parent="Armature/Skeleton3D" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_tje64")
+
+[node name="Cube_001" parent="Armature/Skeleton3D" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_wrpdt")
+
+[node name="Cube_002" parent="Armature/Skeleton3D" index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_vgv4l")
+
+[node name="Cube_003" parent="Armature/Skeleton3D" index="3"]
+surface_material_override/0 = SubResource("StandardMaterial3D_bqwce")
+
+[node name="Cylinder_013" parent="Armature/Skeleton3D" index="4"]
+unique_name_in_owner = true
+surface_material_override/0 = SubResource("StandardMaterial3D_7txkg")
+
+[node name="Cylinder_014" parent="Armature/Skeleton3D" index="5"]
+unique_name_in_owner = true
+surface_material_override/0 = SubResource("StandardMaterial3D_lux0u")
+
+[node name="Cylinder_018" parent="Armature/Skeleton3D" index="6"]
+surface_material_override/0 = SubResource("StandardMaterial3D_7o6aq")
+
+[node name="Sphere_038" parent="Armature/Skeleton3D" index="7"]
+surface_material_override/0 = SubResource("StandardMaterial3D_iwd8d")
+
+[node name="Sphere_039" parent="Armature/Skeleton3D" index="8"]
+surface_material_override/0 = SubResource("StandardMaterial3D_2qhjk")
+
+[node name="Sphere_040" parent="Armature/Skeleton3D" index="9"]
+surface_material_override/0 = SubResource("StandardMaterial3D_8pqfh")
+
+[node name="Sphere_041" parent="Armature/Skeleton3D" index="10"]
+surface_material_override/0 = SubResource("StandardMaterial3D_a0hmq")
+
+[node name="Text" parent="Armature/Skeleton3D" index="11"]
+surface_material_override/0 = SubResource("StandardMaterial3D_qbafp")
+
+[node name="Text_001" parent="Armature/Skeleton3D" index="12"]
+surface_material_override/0 = SubResource("StandardMaterial3D_msgi5")
+
+[node name="Text_002" parent="Armature/Skeleton3D" index="13"]
+surface_material_override/0 = SubResource("StandardMaterial3D_m2nfq")
+
+[node name="Text_003" parent="Armature/Skeleton3D" index="14"]
+surface_material_override/0 = SubResource("StandardMaterial3D_j4t60")
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="." index="6"]
+libraries = {
+&"": SubResource("AnimationLibrary_tje64")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="." index="7"]
+tree_root = SubResource("AnimationNodeStateMachine_bqwce")
+anim_player = NodePath("../AnimationPlayer")
+parameters/conditions/next_to_player = false
+parameters/conditions/not_next_to_player = false
+parameters/walk/TimeScale/scale = 3.0
+
+[node name="exclamation_mark" type="MeshInstance3D" parent="." index="8"]
+transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+mesh = ExtResource("2_7txkg")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="exclamation_mark" index="0"]
+libraries = {
+&"": SubResource("AnimationLibrary_vq8e1")
+}
+
+[node name="player_y_pos" type="Marker3D" parent="." index="9"]
+transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+
+[node name="Timer" type="Timer" parent="." index="10"]
+wait_time = 2.5
+
+[node name="head_particles" type="GPUParticles3D" parent="." index="11"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.2129, 0)
+visible = false
+amount = 9
+process_material = SubResource("ParticleProcessMaterial_wrpdt")
+draw_pass_1 = SubResource("SphereMesh_vgv4l")
+
+[node name="body_particles" type="GPUParticles3D" parent="." index="12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.26451, 0)
+visible = false
+amount = 22
+process_material = SubResource("ParticleProcessMaterial_bqwce")
+draw_pass_1 = SubResource("SphereMesh_7o6aq")
+
+[connection signal="body_entered" from="explosion_area" to="." method="_on_explosion_area_body_entered"]
+[connection signal="animation_finished" from="AnimationTree" to="." method="_on_animation_tree_animation_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

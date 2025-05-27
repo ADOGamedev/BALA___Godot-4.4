@@ -1,0 +1,173 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="BALA"
+run/main_scene="res://main_menu_bg.tscn"
+config/features=PackedStringArray("4.4")
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/fullsize=false
+boot_splash/image="uid://c5orevtdmha6s"
+config/icon="uid://evaunmqriih4"
+boot_splash/minimum_display_time=2000
+
+[autoload]
+
+JsonLootSavingLoading="*res://json_loot_saving_loading.gd"
+GlobalMouse="*res://global_mouse.gd"
+GlobalSceneChange="*res://global_scene_change.gd"
+GlobalLootSavingLoading="*res://global_loot_saving_loading.gd"
+SaveLoadPlayerStats="*res://save_load_player_stats.gd"
+JsonOptionsSaving="*res://json_options_saving.gd"
+FpsIndicator="*res://fps_indicator.tscn"
+FullScreenWithF11="*res://full_screen_with_f_11.gd"
+GlobalSaturation="*res://global_saturation.gd"
+LoadPlayerStatsOnready="*res://load_player_stats_onready.gd"
+SfxRandomizer="*res://sfx_randomizer.gd"
+UpdateResolution="*res://update_resolution.gd"
+
+[display]
+
+window/size/mode=2
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/advanced_radial_menu/plugin.cfg")
+
+[global_group]
+
+diamonds=""
+ladder=""
+seesaw=""
+moving_block=""
+chests=""
+pickable_blasters=""
+level_boxes=""
+marionette_enemies=""
+enemies=""
+hearts=""
+bullets=""
+invisible_platforms=""
+bushes=""
+fusil_enemies=""
+shotgun_enemies=""
+tracer_enemies=""
+mini_enemies=""
+
+[importer_defaults]
+
+font_data_dynamic={
+"Compress": null,
+"Fallbacks": null,
+"Rendering": null,
+"allow_system_fallback": true,
+"antialiasing": 1,
+"compress": true,
+"disable_embedded_bitmaps": true,
+"fallbacks": [],
+"force_autohinter": false,
+"generate_mipmaps": false,
+"hinting": 1,
+"language_support": {},
+"msdf_pixel_range": 8,
+"msdf_size": 48,
+"multichannel_signed_distance_field": false,
+"opentype_features": {},
+"oversampling": 0.0,
+"preload": [],
+"script_support": {},
+"subpixel_positioning": 1
+}
+
+[input]
+
+forward={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":87,"key_label":0,"unicode":119,"location":0,"echo":false,"script":null)
+]
+}
+back={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":83,"key_label":0,"unicode":115,"location":0,"echo":false,"script":null)
+]
+}
+left={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":65,"key_label":0,"unicode":97,"location":0,"echo":false,"script":null)
+]
+}
+right={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":68,"key_label":0,"unicode":100,"location":0,"echo":false,"script":null)
+]
+}
+jump={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":32,"key_label":0,"unicode":32,"location":0,"echo":false,"script":null)
+]
+}
+shoot={
+"deadzone": 0.5,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":1,"canceled":false,"pressed":false,"double_click":false,"script":null)
+]
+}
+crouch={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194325,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+]
+}
+run={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194326,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+]
+}
+change_weapon={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":69,"key_label":0,"unicode":101,"location":0,"echo":false,"script":null)
+]
+}
+
+[layer_names]
+
+3d_render/layer_1="Capa 1"
+3d_render/layer_2="trees and blocks"
+3d_physics/layer_1="enviroment"
+3d_physics/layer_2="player"
+3d_physics/layer_3="pickup"
+3d_physics/layer_4="enemies"
+3d_physics/layer_5="bullet"
+3d_physics/layer_6="seesaw_axis"
+
+[network]
+
+limits/packet_peer_stream/max_buffer_po2=32
+
+[physics]
+
+3d/physics_engine="JoltPhysics3D"
+common/enable_pause_aware_picking=true
+jolt_3d/stretch/mode="viewport"
+jolt_3d/sleep/enabled=false
+jolt_3d/collisions/areas_detect_static_bodies=true
+
+[rendering]
+
+occlusion_culling/occlusion_rays_per_thread=256
+lightmapping/probe_capture/update_speed=10.0
+global_illumination/sdfgi/probe_ray_count=0
+global_illumination/sdfgi/frames_to_converge=1
+global_illumination/sdfgi/frames_to_update_lights=4
+anti_aliasing/quality/screen_space_aa=1
+occlusion_culling/use_occlusion_culling=true
+mesh_lod/lod_change/threshold_pixels=0.2
+environment/defaults/default_environment="res://default_env.tres"

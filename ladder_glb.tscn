@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://4dixdde0jgdo"]
+
+[ext_resource type="PackedScene" uid="uid://berk3n81w23eh" path="res://assets/kenney_platofmer_kit/ladder-long.glb" id="1_npvjr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_41cfh"]
+size = Vector3(0.504395, 2.0051, 0.09375)
+
+[node name="ladder" groups=["ladder"] instance=ExtResource("1_npvjr")]
+collision_mask = 10
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00366211, 0.998093, 0.00195313)
+shape = SubResource("BoxShape3D_41cfh")

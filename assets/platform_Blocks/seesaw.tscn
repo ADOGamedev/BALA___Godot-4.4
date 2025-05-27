@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://xouets3l4o5y"]
+
+[ext_resource type="PackedScene" uid="uid://b6mi8in7rcms" path="res://assets/platform_Blocks/seesaw.glb" id="1_vdaeb"]
+[ext_resource type="Texture2D" uid="uid://dspu3rvf1hkbk" path="res://assets/platform_Blocks/seesaw_colormap.png" id="2_lbchm"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_1c1u0"]
+friction = 0.7
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q01nl"]
+resource_name = "colormap.002"
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_color = Color(1, 0.47, 0.47, 1)
+albedo_texture = ExtResource("2_lbchm")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_wnry6"]
+points = PackedVector3Array(1.60142, 0.5, 0, 1.66967, 0.468285, 0, 1.60142, 0.5, -0.3, -1.21675, 0.5, 0, 1.70158, 0.399961, 0, 1.66967, 0.468285, -0.3, -1.21675, 0.5, -0.3, -1.285, 0.468285, 0, 1.70158, 0.399961, -0.3, 1.70158, -0.400059, 0, -1.285, 0.468285, -0.3, -1.31661, 0.399961, 0, 1.70158, -0.400059, -0.3, 1.66967, -0.468383, 0, -1.31661, 0.399961, -0.3, -1.31661, -0.400059, 0, 1.66967, -0.468383, -0.3, 1.60142, -0.5, 0, -1.31661, -0.400059, -0.3, -1.285, -0.468383, 0, 1.60142, -0.5, -0.3, -1.21675, -0.5, 0, -1.285, -0.468383, -0.3, -1.21675, -0.5, -0.3)
+
+[node name="seesaw" groups=["seesaw"] instance=ExtResource("1_vdaeb")]
+mass = 15.0
+physics_material_override = SubResource("PhysicsMaterial_1c1u0")
+center_of_mass_mode = 1
+linear_damp = 1.0
+angular_damp = 1.5
+
+[node name="block-moving" parent="." index="0"]
+transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, -0.379, -0.28792, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_q01nl")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, -0.379, -0.28792, 0)
+shape = SubResource("ConvexPolygonShape3D_wnry6")

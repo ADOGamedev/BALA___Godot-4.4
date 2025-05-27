@@ -1,0 +1,269 @@
+[gd_scene load_steps=18 format=3 uid="uid://b5hbl6p5bjjxm"]
+
+[ext_resource type="Script" uid="uid://cs3vmu6pjpx6u" path="res://loading_screen.gd" id="1_4h5e1"]
+[ext_resource type="Texture2D" uid="uid://cov260cuyltgf" path="res://assets/ui/single_ui_leave.png" id="1_b2pnv"]
+[ext_resource type="FontFile" uid="uid://f4gf616lj7hp" path="res://assets/fonts/Arista-Pro-Fat-trial.ttf" id="2_m2hqq"]
+[ext_resource type="Texture2D" uid="uid://b4wfcfn4qlp5y" path="res://assets/ui/loading_texture1.png" id="4_ppj55"]
+[ext_resource type="Texture2D" uid="uid://uw6u82hu646a" path="res://assets/ui/loading_texture2.png" id="5_117wc"]
+[ext_resource type="Texture2D" uid="uid://ccjxhuos3p61y" path="res://assets/ui/loading_texture3.png" id="6_o7iex"]
+[ext_resource type="Texture2D" uid="uid://jqn6bjmc1idm" path="res://assets/ui/loading_texture4.png" id="7_im1v0"]
+[ext_resource type="Texture2D" uid="uid://dvmdyks735fvd" path="res://assets/ui/loading_texture5.png" id="8_01sx0"]
+[ext_resource type="Texture2D" uid="uid://cbgrnpm31o5b6" path="res://assets/ui/loading_texture6.png" id="9_h0lsx"]
+[ext_resource type="Texture2D" uid="uid://cbt0kfuiu8khx" path="res://assets/ui/loading_texture7.png" id="10_wmvof"]
+[ext_resource type="Texture2D" uid="uid://d2xtlsrp44gai" path="res://assets/ui/loading_texture8.png" id="11_rbfni"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b3itm"]
+bg_color = Color(0.68, 0.5593, 0.1972, 1)
+border_width_left = 45
+border_width_top = 45
+border_width_right = 45
+border_width_bottom = 45
+border_color = Color(0.53, 0.411633, 0.1749, 1)
+
+[sub_resource type="FontVariation" id="FontVariation_pspi4"]
+base_font = ExtResource("2_m2hqq")
+spacing_glyph = 3
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nh1pb"]
+
+[sub_resource type="Animation" id="Animation_txblf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("loading_texture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("CompressedTexture2D_nh1pb")]
+}
+
+[sub_resource type="Animation" id="Animation_yik42"]
+resource_name = "load"
+length = 1.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("loading_texture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.3, 0.45, 0.6, 0.75, 0.9, 1.05),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("4_ppj55"), ExtResource("5_117wc"), ExtResource("6_o7iex"), ExtResource("7_im1v0"), ExtResource("8_01sx0"), ExtResource("9_h0lsx"), ExtResource("10_wmvof"), ExtResource("11_rbfni")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_88jj1"]
+_data = {
+&"RESET": SubResource("Animation_txblf"),
+&"load": SubResource("Animation_yik42")
+}
+
+[node name="loading_screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4h5e1")
+
+[node name="bg" type="PanelContainer" parent="."]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_b3itm")
+
+[node name="leaves" type="Control" parent="."]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect2" type="TextureRect" parent="leaves"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.008
+anchor_top = 0.538
+anchor_right = 0.008
+anchor_bottom = 0.538
+offset_left = 322.784
+offset_top = -29.624
+offset_right = 636.784
+offset_bottom = 376.376
+grow_vertical = 2
+rotation = 2.71045
+texture = ExtResource("1_b2pnv")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect7" type="TextureRect" parent="leaves"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.007
+anchor_top = 0.548
+anchor_right = 0.007
+anchor_bottom = 0.548
+offset_left = 205.873
+offset_top = 105.742
+offset_right = 519.873
+offset_bottom = 511.742
+rotation = 3.25851
+scale = Vector2(0.688605, 0.688605)
+texture = ExtResource("1_b2pnv")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect8" type="TextureRect" parent="leaves"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.00173611
+anchor_top = 0.517852
+anchor_right = -0.00173611
+anchor_bottom = 0.517852
+offset_left = 43.0
+offset_top = 224.432
+offset_right = 357.0
+offset_bottom = 630.432
+rotation = 4.21067
+scale = Vector2(0.688605, 0.688605)
+texture = ExtResource("1_b2pnv")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="leaves2" type="Control" parent="."]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect7" type="TextureRect" parent="leaves2"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -287.0
+offset_top = -27.0
+offset_right = 27.0
+offset_bottom = 379.0
+grow_horizontal = 0
+grow_vertical = 0
+rotation = 4.27589
+scale = Vector2(0.783723, 0.783723)
+texture = ExtResource("1_b2pnv")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect2" type="TextureRect" parent="leaves2"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -58.0
+offset_top = -422.0
+offset_right = 256.0
+offset_bottom = -16.0
+grow_horizontal = 0
+grow_vertical = 0
+rotation = 1.0472
+scale = Vector2(1.66778, 1.66778)
+texture = ExtResource("1_b2pnv")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect8" type="TextureRect" parent="leaves2"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -305.0
+offset_top = -25.0
+offset_right = 9.0
+offset_bottom = 381.0
+grow_horizontal = 0
+grow_vertical = 0
+rotation = 4.87645
+scale = Vector2(1.11332, 1.11332)
+texture = ExtResource("1_b2pnv")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_bottom = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="loading_label" type="Label" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.65, 0.4602, 0.1755, 1)
+theme_override_colors/font_shadow_color = Color(0.39, 0.33384, 0.2496, 1)
+theme_override_colors/font_outline_color = Color(0.88, 0.6864, 0.396, 1)
+theme_override_constants/shadow_offset_x = 7
+theme_override_constants/shadow_offset_y = 7
+theme_override_constants/outline_size = 60
+theme_override_constants/shadow_outline_size = 60
+theme_override_fonts/font = SubResource("FontVariation_pspi4")
+theme_override_font_sizes/font_size = 81
+text = "LOADING"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="loading_texture" type="TextureRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_bottom = 70.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(576, 35)
+size_flags_vertical = 3
+texture = SubResource("CompressedTexture2D_nh1pb")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_88jj1")
+}
+autoplay = "load"

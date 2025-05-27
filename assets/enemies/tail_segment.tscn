@@ -1,0 +1,82 @@
+[gd_scene load_steps=11 format=3 uid="uid://dvbbiji1yavvc"]
+
+[ext_resource type="Script" uid="uid://cij2fpdw3wd5t" path="res://assets/enemies/tail_segment.gd" id="1_qmnht"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_u0sp3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u0sp3"]
+transparency = 1
+albedo_color = Color(1, 0, 0, 0.243137)
+rim_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6ilre"]
+transparency = 1
+blend_mode = 1
+albedo_color = Color(1, 0.4, 0, 0.188235)
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+rim_enabled = true
+rim = 0.0
+rim_tint = 0.0
+
+[sub_resource type="Curve" id="Curve_u0sp3"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.18267, 1), 0.0, 0.0, 0, 0, Vector2(0.627635, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_6ilre"]
+curve = SubResource("Curve_u0sp3")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_l5qjx"]
+angle_min = 1.07288e-05
+angle_max = 1.07288e-05
+direction = Vector3(0, 1, 0)
+spread = 180.0
+initial_velocity_min = 3.0
+initial_velocity_max = 7.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.01
+scale_max = 0.03
+scale_curve = SubResource("CurveTexture_6ilre")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_23bbj"]
+transparency = 1
+blend_mode = 3
+albedo_color = Color(0.752941, 0, 0, 1)
+emission_enabled = true
+rim_enabled = true
+
+[sub_resource type="SphereMesh" id="SphereMesh_omaho"]
+material = SubResource("StandardMaterial3D_23bbj")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_5liud"]
+radius = 0.800498
+
+[node name="tail_segment" type="Node3D"]
+script = ExtResource("1_qmnht")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_u0sp3")
+surface_material_override/0 = SubResource("StandardMaterial3D_u0sp3")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.17999, 0, 0, 0, 2.17999, 0, 0, 0, 2.17999, 0, 0, 0)
+mesh = SubResource("SphereMesh_u0sp3")
+surface_material_override/0 = SubResource("StandardMaterial3D_6ilre")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.786714, 0)
+amount = 6
+process_material = SubResource("ParticleProcessMaterial_l5qjx")
+draw_pass_1 = SubResource("SphereMesh_omaho")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_5liud")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+target_position = Vector3(0, -1.145, 0)
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

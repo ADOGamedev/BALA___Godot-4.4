@@ -1,0 +1,234 @@
+[gd_scene load_steps=25 format=3 uid="uid://cxemjfibiwdd8"]
+
+[ext_resource type="PackedScene" uid="uid://je6ewc3ab6wd" path="res://assets/enemies/bullet_enemie.glb" id="1_f7nxb"]
+[ext_resource type="Script" uid="uid://blfnca6odr7p5" path="res://assets/enemies/bullet_enemie.gd" id="2_u73co"]
+[ext_resource type="ArrayMesh" uid="uid://dssc4xygd45qu" path="res://assets/enemies/exclamation_mark.obj" id="3_ueuv5"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4psbh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_74toi"]
+resource_name = "Material.001"
+cull_mode = 2
+albedo_color = Color(0, 0, 0, 1)
+roughness = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ybldd"]
+resource_name = "Material.001"
+cull_mode = 2
+albedo_color = Color(0, 0, 0, 1)
+roughness = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a58gc"]
+resource_name = "Material.001"
+cull_mode = 2
+albedo_color = Color(0, 0, 0, 1)
+roughness = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uf40o"]
+resource_name = "Material.002"
+albedo_color = Color(0.831373, 0.686275, 0.215686, 1)
+metallic = 0.992126
+roughness = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aa81b"]
+resource_name = "Material.004"
+cull_mode = 2
+albedo_color = Color(0.721569, 0.45098, 0.2, 1)
+metallic = 1.0
+roughness = 0.5
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_xtec2"]
+animation = &"walking"
+
+[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_obajl"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_dgcyc"]
+graph_offset = Vector2(-102.798, 55.5675)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_xtec2")
+nodes/Animation/position = Vector2(-60, 120)
+nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_obajl")
+nodes/TimeScale/position = Vector2(120, 140)
+node_connections = [&"TimeScale", 0, &"Animation", &"output", 0, &"TimeScale"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_cyyyg"]
+advance_mode = 2
+advance_condition = &"has_appeared"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_74toi"]
+states/Start/position = Vector2(245, 103)
+states/walking/node = SubResource("AnimationNodeBlendTree_dgcyc")
+states/walking/position = Vector2(493, 103)
+transitions = ["Start", "walking", SubResource("AnimationNodeStateMachineTransition_cyyyg")]
+graph_offset = Vector2(-27, 21.6558)
+
+[sub_resource type="Animation" id="Animation_t82i6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_jwdev"]
+resource_name = "exclamation_mark"
+length = 1.15
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3, 1, 1.13333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.3, 0.3, 0.3), Vector3(0.2, 0.2, 0.2), Vector3(0.2, 0.2, 0.2), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 5, 0), Vector3(0, 5.5, 0), Vector3(0, 5, 0), Vector3(0, 5, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vq8e1"]
+_data = {
+&"RESET": SubResource("Animation_t82i6"),
+&"exclamation_mark": SubResource("Animation_jwdev")
+}
+
+[sub_resource type="Curve" id="Curve_74toi"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.556989, 1), 0.0, 0.0, 0, 0, Vector2(0.860215, 0.604943), -3.37466, -3.37466, 0, 0, Vector2(0.991398, 0.0360616), -6.32748, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_74toi"]
+curve = SubResource("Curve_74toi")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_a58gc"]
+angle_min = 1.07288e-05
+angle_max = 1.07288e-05
+spread = 180.0
+initial_velocity_min = 1.0
+initial_velocity_max = 5.0
+gravity = Vector3(0, 4, 0)
+scale_min = 0.6
+scale_max = 1.2
+scale_curve = SubResource("CurveTexture_74toi")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_benup"]
+resource_name = "Material.002"
+albedo_color = Color(0.831373, 0.686275, 0.215686, 1)
+metallic = 0.992126
+roughness = 0.5
+
+[sub_resource type="SphereMesh" id="SphereMesh_benup"]
+material = SubResource("StandardMaterial3D_benup")
+radius = 0.05
+height = 0.1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mxu56"]
+resource_name = "Material.004"
+cull_mode = 2
+albedo_color = Color(0.721569, 0.45098, 0.2, 1)
+metallic = 1.0
+roughness = 0.5
+
+[sub_resource type="SphereMesh" id="SphereMesh_ayp8t"]
+material = SubResource("StandardMaterial3D_mxu56")
+radius = 0.035
+height = 0.07
+
+[node name="bullet_enemie" groups=["enemies"] instance=ExtResource("1_f7nxb")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+collision_layer = 8
+collision_mask = 27
+script = ExtResource("2_u73co")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="0"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 2, 0)
+shape = SubResource("CapsuleShape3D_4psbh")
+
+[node name="Armature" parent="." index="1"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0.555249, 0)
+
+[node name="RayCast3D" type="RayCast3D" parent="Armature" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00694895, 1.00193)
+
+[node name="Cylinder" parent="Armature" index="1"]
+unique_name_in_owner = true
+surface_material_override/0 = SubResource("StandardMaterial3D_74toi")
+
+[node name="Sphere" parent="Armature" index="2"]
+unique_name_in_owner = true
+surface_material_override/0 = SubResource("StandardMaterial3D_ybldd")
+
+[node name="Sphere_001" parent="Armature" index="3"]
+unique_name_in_owner = true
+surface_material_override/0 = SubResource("StandardMaterial3D_a58gc")
+
+[node name="Sphere_002" parent="Armature/Skeleton3D" index="0"]
+unique_name_in_owner = true
+lod_bias = 0.8
+surface_material_override/0 = SubResource("StandardMaterial3D_uf40o")
+
+[node name="Sphere_003" parent="Armature/Skeleton3D" index="1"]
+unique_name_in_owner = true
+lod_bias = 0.8
+surface_material_override/0 = SubResource("StandardMaterial3D_aa81b")
+
+[node name="AnimationTree" type="AnimationTree" parent="." index="3"]
+tree_root = SubResource("AnimationNodeStateMachine_74toi")
+anim_player = NodePath("../AnimationPlayer")
+parameters/conditions/has_appeared = false
+parameters/walking/TimeScale/scale = 2.0
+
+[node name="exclamation_mark" type="MeshInstance3D" parent="." index="4"]
+transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+mesh = ExtResource("3_ueuv5")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="exclamation_mark" index="0"]
+libraries = {
+&"": SubResource("AnimationLibrary_vq8e1")
+}
+
+[node name="player_y_pos" type="Marker3D" parent="." index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.02888, 0)
+
+[node name="body_particles" type="GPUParticles3D" parent="." index="6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.822463, 0)
+visible = false
+amount = 11
+process_material = SubResource("ParticleProcessMaterial_a58gc")
+draw_pass_1 = SubResource("SphereMesh_benup")
+
+[node name="head_particles" type="GPUParticles3D" parent="." index="7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.23186, 0)
+visible = false
+amount = 6
+process_material = SubResource("ParticleProcessMaterial_a58gc")
+draw_pass_1 = SubResource("SphereMesh_ayp8t")

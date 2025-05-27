@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://btd8hwvr7ym2q"]
+
+[ext_resource type="PackedScene" uid="uid://517vspla4pb0" path="res://assets/kenney_platofmer_kit/tree-pine-small.glb" id="1_e7hpu"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qc5yy"]
+radius = 0.164079
+height = 0.892589
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_1encv"]
+height = 0.897307
+radius = 0.223356
+
+[node name="small_pine" instance=ExtResource("1_e7hpu")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.278934, 0)
+shape = SubResource("CapsuleShape3D_qc5yy")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.801762, 0)
+shape = SubResource("CylinderShape3D_1encv")

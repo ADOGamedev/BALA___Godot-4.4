@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=3 uid="uid://dlp3amfk61bq4"]
+
+[ext_resource type="Script" uid="uid://dvxv0ma1rxmig" path="res://bullet_enemie_from_the_floor.gd" id="1_57s4k"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qbqti"]
+albedo_color = Color(0.356863, 0.741176, 0.419608, 1)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_w0chy"]
+lifetime_randomness = 0.09
+emission_shape = 6
+emission_ring_axis = Vector3(0, 1, 0)
+emission_ring_height = 0.165
+emission_ring_radius = 0.2
+emission_ring_inner_radius = 0.19
+emission_ring_cone_angle = 90.0
+angle_min = 1.07288e-05
+angle_max = 1.07288e-05
+direction = Vector3(0, 1, 0)
+spread = 63.53
+initial_velocity_min = 1.5
+initial_velocity_max = 1.5
+orbit_velocity_min = 9.49949e-08
+orbit_velocity_max = 9.49949e-08
+radial_velocity_min = 0.199978
+radial_velocity_max = 0.199978
+gravity = Vector3(0, -3, 0)
+linear_accel_min = -2.23517e-06
+linear_accel_max = -2.23517e-06
+radial_accel_min = -2.23517e-06
+radial_accel_max = -2.23517e-06
+scale_min = 0.1
+scale_max = 0.3
+hue_variation_min = -2.23517e-08
+hue_variation_max = -2.23517e-08
+sub_emitter_keep_velocity = true
+
+[sub_resource type="SphereMesh" id="SphereMesh_4ojdy"]
+
+[node name="bullet_enemie_from_the_floor" type="Node3D"]
+script = ExtResource("1_57s4k")
+
+[node name="enemy" type="Node3D" parent="."]
+
+[node name="particles" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0640329, 0)
+material_override = SubResource("StandardMaterial3D_qbqti")
+transparency = 1.0
+cast_shadow = 0
+lod_bias = 0.6
+amount = 100
+lifetime = 0.64
+speed_scale = 1.2
+collision_base_size = 0.6
+process_material = SubResource("ParticleProcessMaterial_w0chy")
+draw_pass_1 = SubResource("SphereMesh_4ojdy")

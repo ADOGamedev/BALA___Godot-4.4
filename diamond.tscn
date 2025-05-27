@@ -1,0 +1,201 @@
+[gd_scene load_steps=17 format=4 uid="uid://d4f63qqdp1g5l"]
+
+[ext_resource type="PackedScene" uid="uid://cwbypqhxkj6uh" path="res://assets/kenney_platofmer_kit/jewel.glb" id="1_p2tmw"]
+[ext_resource type="Script" uid="uid://bivdahttioa6o" path="res://diamond.gd" id="2_5nmvg"]
+[ext_resource type="Shader" uid="uid://8ii0yti5kvye" path="res://diamond.tres" id="2_g4gt5"]
+[ext_resource type="Texture2D" uid="uid://c70pu8lahq313" path="res://assets/kenney_platofmer_kit/Textures/colormap.png" id="3_gojyf"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_54g68"]
+render_priority = 0
+shader = ExtResource("2_g4gt5")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oka0n"]
+size = Vector3(0.414536, 0.527588, 0.406128)
+
+[sub_resource type="Animation" id="Animation_0w3sn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("meshes:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_7oy0o"]
+resource_name = "diamond"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("meshes:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 3.14159, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("meshes:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -0.1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_5kxhs"]
+resource_name = "dissapear"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("meshes:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(1.3, 1.3, 1.3), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ffnw0"]
+_data = {
+&"RESET": SubResource("Animation_0w3sn"),
+&"diamond": SubResource("Animation_7oy0o"),
+&"dissapear": SubResource("Animation_5kxhs")
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_btn1m"]
+resource_name = "colormap"
+cull_mode = 2
+albedo_texture = ExtResource("3_gojyf")
+texture_filter = 2
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_n7t02"]
+_surfaces = [{
+"aabb": AABB(-0.16644, 0, -0.144141, 0.33288, 0.370482, 0.288283),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AgAAAAEAAwACAAEAAgAEAAAABAAFAAYAAQAAAAYABgAFAAEABAAHAAUAAwABAAcABAACAAMAAwAHAAQABwABAAUAAAAEAAYA"),
+"name": "colormap",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("////f/9/AAD/fwAA/38AAP+//3///wAA/z//f///AAD/f////38AAP8//38AAAAA/7//fwAAAAAAAP9//38AAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_gj0js"]
+resource_name = "jewel_jewel"
+_surfaces = [{
+"aabb": AABB(-0.16644, 0, -0.144141, 0.33288, 0.370482, 0.288283),
+"attribute_data": PackedByteArray("/7f/n/+3mLn/t/+f/7f/n/+3mLn/t/+f/7dlhv+3/5//t/+f/7f/n/+3/5//t2WG/7f/n/+3/5//t5i5/7f/n/+3mLn/t/+f/7f/n/+3/5//t2WG/7eYuf+3/5//t/+f/7f/n/+3/5//t2WG/7f/n/+3ZYb/t/+f/7eYuf+3/5//t/+f/7dlhv+3/5//t/+f"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AgAAAAEABQADAAQACAAGAAcACwAJAAoADgAMAA0AEQAPABAAFAASABMAFwAVABYAGgAYABkAHQAbABwAIAAeAB8AIwAhACIA"),
+"material": SubResource("StandardMaterial3D_btn1m"),
+"name": "colormap",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 36,
+"vertex_data": PackedByteArray("////f/9/x7H/fwAA/3/Hsf+//3///8ex/7//f///8Jr/fwAA/3/wmv8//3////Ca/3////9/x7H///9//3/Hsf+//3///8ex/z//fwAA////v/9/AAD///9/////f///////f/9/29f/v/9/AADb1/9/AAD/f9vX/z//fwAA////fwAA/3////+//38AAP//AAD/f/9/29f/P/9/AADb1/9/////f9vX/38AAP9/x7EAAP9//3/Hsf8//3///8ex/7//f///8Jr/P/9////wmv9/////f/CaAAD/f/9/x7H/f////3/Hsf8//3///8ex/38AAP9/29f/P/9/AADb1wAA/3//f9vX/3////9/29f/v/9/AADb1////3//f9vXuljxPbpY8T26WPE9AAD/fwAA/38AAP9/8L1FJ/C9RSfwvUUn/39K3/9/St//f0rfim/1LIpv9SyKb/UstKD//7Sg//+0oP//dJAJ03SQCdN0kAnTDkK52A5CudgOQrnY////f////3////9/RKcNwkSnDcJEpw3CClOK7wpTiu8KU4rv9Kx0EPSsdBD0rHQQ")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_n7t02")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iyjau"]
+resource_name = "colormap"
+cull_mode = 2
+albedo_texture = ExtResource("3_gojyf")
+texture_filter = 2
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ncujh"]
+_surfaces = [{
+"aabb": AABB(-0.16644, 0, -0.144141, 0.33288, 0.370482, 0.288283),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AgAAAAEAAwACAAEAAgAEAAAABAAFAAYAAQAAAAYABgAFAAEABAAHAAUAAwABAAcABAACAAMAAwAHAAQABwABAAUAAAAEAAYA"),
+"name": "colormap",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("////f/9/AAD/fwAA/38AAP+//3///wAA/z//f///AAD/f////38AAP8//38AAAAA/7//fwAAAAAAAP9//38AAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_d125c"]
+resource_name = "jewel_jewel"
+_surfaces = [{
+"aabb": AABB(-0.16644, 0, -0.144141, 0.33288, 0.370482, 0.288283),
+"attribute_data": PackedByteArray("/7f/n/+3mLn/t/+f/7f/n/+3mLn/t/+f/7dlhv+3/5//t/+f/7f/n/+3/5//t2WG/7f/n/+3/5//t5i5/7f/n/+3mLn/t/+f/7f/n/+3/5//t2WG/7eYuf+3/5//t/+f/7f/n/+3/5//t2WG/7f/n/+3ZYb/t/+f/7eYuf+3/5//t/+f/7dlhv+3/5//t/+f"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AgAAAAEABQADAAQACAAGAAcACwAJAAoADgAMAA0AEQAPABAAFAASABMAFwAVABYAGgAYABkAHQAbABwAIAAeAB8AIwAhACIA"),
+"material": SubResource("StandardMaterial3D_iyjau"),
+"name": "colormap",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 36,
+"vertex_data": PackedByteArray("////f/9/x7H/fwAA/3/Hsf+//3///8ex/7//f///8Jr/fwAA/3/wmv8//3////Ca/3////9/x7H///9//3/Hsf+//3///8ex/z//fwAA////v/9/AAD///9/////f///////f/9/29f/v/9/AADb1/9/AAD/f9vX/z//fwAA////fwAA/3////+//38AAP//AAD/f/9/29f/P/9/AADb1/9/////f9vX/38AAP9/x7EAAP9//3/Hsf8//3///8ex/7//f///8Jr/P/9////wmv9/////f/CaAAD/f/9/x7H/f////3/Hsf8//3///8ex/38AAP9/29f/P/9/AADb1wAA/3//f9vX/3////9/29f/v/9/AADb1////3//f9vXuljxPbpY8T26WPE9AAD/fwAA/38AAP9/8L1FJ/C9RSfwvUUn/39K3/9/St//f0rfim/1LIpv9SyKb/UstKD//7Sg//+0oP//dJAJ03SQCdN0kAnTDkK52A5CudgOQrnY////f////3////9/RKcNwkSnDcJEpw3CClOK7wpTiu8KU4rv9Kx0EPSsdBD0rHQQ")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_ncujh")
+
+[node name="diamond" groups=["diamonds", "pickups"] instance=ExtResource("1_p2tmw")]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("2_5nmvg")
+
+[node name="jewel2" parent="." index="0"]
+visible = false
+surface_material_override/0 = SubResource("ShaderMaterial_54g68")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00275421, 0.176147, -0.00164795)
+shape = SubResource("BoxShape3D_oka0n")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2"]
+libraries = {
+&"": SubResource("AnimationLibrary_ffnw0")
+}
+autoplay = "diamond"
+
+[node name="meshes" type="Node3D" parent="." index="3"]
+
+[node name="jewel4" type="MeshInstance3D" parent="meshes" index="0"]
+transform = Transform3D(0.772113, 0, 0.635485, 0, 1, 0, -0.635485, 0, 0.772113, 0, -0.0408067, 0)
+gi_mode = 0
+mesh = SubResource("ArrayMesh_gj0js")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("ShaderMaterial_54g68")
+
+[node name="jewel3" type="MeshInstance3D" parent="meshes" index="1"]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0.033, 0)
+gi_mode = 0
+mesh = SubResource("ArrayMesh_d125c")
+skeleton = NodePath("")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="meshes" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0365261, 0)
+light_color = Color(0, 0.85, 1, 1)
+light_energy = 0.675
+
+[node name="blue_light" type="OmniLight3D" parent="." index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.360267, 0)
+light_color = Color(0.00999999, 0.406, 1, 1)
+light_energy = 2.595
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

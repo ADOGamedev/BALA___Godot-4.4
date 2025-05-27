@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://b3fdg414a04rk"]
+
+[ext_resource type="PackedScene" uid="uid://x3pq317ve52v" path="res://assets/blasters/blasterB.glb" id="1_cdr64"]
+[ext_resource type="Texture2D" uid="uid://bxcbf3ydl1h82" path="res://assets/players_blasters/blasters_textures/gunA.png" id="2_g2v7c"]
+[ext_resource type="Script" uid="uid://dh6cjiv8gghvq" path="res://assets/players_blasters/weapons.gd" id="2_wi0df"]
+
+[node name="blasterB" instance=ExtResource("1_cdr64")]
+script = ExtResource("2_wi0df")
+color = Color(0.764706, 0, 0.113725, 1)
+texture = ExtResource("2_g2v7c")
+weapon_stats = {
+"bullet_damage": 1.35,
+"bullet_lifetime": 0.25,
+"bullet_size": 0.7,
+"bullet_speed": 25.0,
+"bullet_z_size": 0.3,
+"shooting_speed": 0.5
+}
+
+[node name="Marker3D" type="Marker3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0418359, 0.203013)

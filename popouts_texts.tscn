@@ -1,0 +1,94 @@
+[gd_scene load_steps=5 format=3 uid="uid://qwjhp5imx3s1"]
+
+[ext_resource type="Script" uid="uid://2fam04qjwwrb" path="res://popups_texts.gd" id="1_1ur23"]
+[ext_resource type="FontFile" uid="uid://f4gf616lj7hp" path="res://assets/fonts/Arista-Pro-Fat-trial.ttf" id="2_bes6b"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dhc4b"]
+bg_color = Color(0, 0, 0, 0.494118)
+
+[sub_resource type="FontVariation" id="FontVariation_8qeab"]
+base_font = ExtResource("2_bes6b")
+baseline_offset = 0.2
+
+[node name="popouts_texts" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+script = ExtResource("1_1ur23")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.5
+
+[node name="popout_text" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 106.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="PanelContainer" type="Panel" parent="popout_text"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 210.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dhc4b")
+
+[node name="popout_container" type="MarginContainer" parent="popout_text"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="popout_label" type="RichTextLabel" parent="popout_text/popout_container"]
+unique_name_in_owner = true
+clip_contents = false
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_outline_size = 3
+theme_override_constants/line_separation = 5
+theme_override_fonts/normal_font = SubResource("FontVariation_8qeab")
+theme_override_fonts/mono_font = SubResource("FontVariation_8qeab")
+theme_override_fonts/italics_font = SubResource("FontVariation_8qeab")
+theme_override_fonts/bold_italics_font = SubResource("FontVariation_8qeab")
+theme_override_fonts/bold_font = SubResource("FontVariation_8qeab")
+theme_override_font_sizes/bold_italics_font_size = 59
+theme_override_font_sizes/italics_font_size = 59
+theme_override_font_sizes/mono_font_size = 59
+theme_override_font_sizes/normal_font_size = 59
+theme_override_font_sizes/bold_font_size = 59
+bbcode_enabled = true
+text = "[center]Press [color=ede84a]W A S D[/color] keys to move.[/center]"
+scroll_active = false
+autowrap_mode = 2
+
+[node name="hidded_notifier" type="VisibleOnScreenNotifier2D" parent="popout_text"]
+position = Vector2(0, 106)
+rect = Rect2(0, 5, 1152, 106)
+
+[node name="shown_notifier" type="VisibleOnScreenNotifier2D" parent="popout_text"]
+position = Vector2(0, 3)
+rect = Rect2(0, 0, 1152, 106)
+
+[connection signal="screen_entered" from="popout_text/hidded_notifier" to="." method="_on_hidded_notifier_screen_entered"]
+[connection signal="screen_exited" from="popout_text/hidded_notifier" to="." method="_on_hidded_notifier_screen_exited"]
+[connection signal="screen_entered" from="popout_text/shown_notifier" to="." method="_on_shown_notifier_screen_entered"]
+[connection signal="screen_exited" from="popout_text/shown_notifier" to="." method="_on_shown_notifier_screen_exited"]

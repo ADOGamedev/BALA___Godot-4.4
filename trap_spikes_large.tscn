@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://onhiywbehsof"]
+
+[ext_resource type="PackedScene" uid="uid://din2diawixi5o" path="res://assets/kenney_platofmer_kit/trap-spikes-large.glb" id="1_nb1p7"]
+[ext_resource type="Script" uid="uid://v8k7b2b4w3mp" path="res://trap_spikes.gd" id="2_y0kbq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_853s4"]
+size = Vector3(0.478516, 0.188477, 0.478638)
+
+[node name="trap-spikes-large" instance=ExtResource("1_nb1p7")]
+collision_mask = 2
+script = ExtResource("2_y0kbq")
+damage = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0913086, 0.00494385)
+shape = SubResource("BoxShape3D_853s4")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
