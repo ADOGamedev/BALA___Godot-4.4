@@ -8,7 +8,7 @@ var player_stats = {
 	"player_has_loaded_weapons": false,
 
 	"levels_completed": 0,
-	"levels_unlocked": 4,
+	"levels_unlocked": 0,
 
 	"diamonds": {
 		"1": [false],

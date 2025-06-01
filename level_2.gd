@@ -37,7 +37,13 @@ func _process(_delta: float) -> void:
 	update_directional_light()
 	return_plat_final_to_player(MOVING_PLAT_FINAL)
 	return_plat_final_to_player(MOVING_PLAT_FINAL_2)
+	if enemies_dead == 4:
+		all_enemies_death = true
 	
+	if all_enemies_death:
+		if CHEST.locked:
+			CHEST.can_unlock = true
+		PORTAL.turn_on_portal(true)
 
 func _unhandled_input(event: InputEvent) -> void:
 	control_of_mouse_mode(event)

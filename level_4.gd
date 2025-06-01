@@ -29,7 +29,7 @@ func _ready() -> void:
 
 	UpdateResolution.update_resolution()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if enemies_dead == 7:
 		all_enemies_death = true
 		

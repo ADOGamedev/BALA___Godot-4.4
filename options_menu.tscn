@@ -852,9 +852,9 @@ theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(0.909804, 0.862745, 0.784314, 1)
 theme_override_colors/font_pressed_color = Color(0.909804, 0.862745, 0.784314, 1)
 theme_override_fonts/font = SubResource("FontVariation_icmqx")
-theme_override_font_sizes/font_size = 55
+theme_override_font_sizes/font_size = 53
 button_pressed = true
-text = "SDFGI"
+text = "BETTER ILUMINATION"
 
 [node name="max_fps" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer/all_options/perfomance/VBoxContainer"]
 layout_mode = 2

@@ -47,7 +47,7 @@ func _on_area_3d_body_exited(body:Node3D) -> void:
 	if body.is_in_group("player"): 
 		player_in = false
 
-func give_item(item_to_give):
+func give_item(item_to_give: PackedScene):
 	for i in range(number_of_items):
 		var item_instance = item_to_give.instantiate()
 		item_instance.item_in_chest = true

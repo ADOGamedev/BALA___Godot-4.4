@@ -552,7 +552,7 @@ tween_full_duration = 5.0
 can_move = true
 
 [node name="block-moving-blue" parent="level/interactive_blocks/falling_block15" index="0"]
-transform = Transform3D(0.00118201, 0.000937373, 0.999991, -2.91032e-11, 0.99999, -0.000937375, -0.999976, 1.10798e-06, 0.00118203, 0.533472, -0.00481176, 0.00578976)
+transform = Transform3D(0.00118201, 0.000937373, 0.999991, -2.91031e-11, 0.99999, -0.000937375, -0.999976, 1.10798e-06, 0.00118203, 0.533472, -0.00481176, 0.00578976)
 
 [node name="alpha_mesh" parent="level/interactive_blocks/falling_block15/block-moving-blue" index="1"]
 mesh = SubResource("ArrayMesh_euuhh")
