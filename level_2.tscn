@@ -442,7 +442,7 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.7638
 curve = SubResource("Curve3D_2nljf")
 
 [node name="PathFollow3D" parent="level2/platforms/moving_platforms/block-moving7/Path3D" index="0"]
-transform = Transform3D(0.000953843, 0.000794906, 0.999994, 0, 0.999993, -0.000794908, -0.999973, 7.58237e-07, 0.000953864, 6.29, -0.005, 0.006)
+transform = Transform3D(0.000953844, 0.000794906, 0.999994, 0, 0.999993, -0.000794908, -0.999973, 7.58237e-07, 0.000953864, 6.29, -0.005, 0.006)
 
 [node name="RemoteTransform3D" parent="level2/platforms/moving_platforms/block-moving7/Path3D/PathFollow3D" index="0"]
 update_rotation = false

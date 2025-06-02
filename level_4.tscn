@@ -434,26 +434,26 @@ transform = Transform3D(1.23963, 0, 0, 0, 1.23963, 0, 0, 0, 1.23963, -19.2162, 1
 tween_full_duration = 4.5
 
 [node name="CharacterBody3D" parent="level/interactive_blocks/block-moving" index="0"]
-transform = Transform3D(0.999997, -1.28729e-07, -0.000145674, 7.10541e-15, 0.999994, -0.000883676, 0.000145674, 0.000883673, 0.999998, 0.00133991, -0.00481129, 0.00579071)
+transform = Transform3D(0.999997, -1.28729e-07, -0.000145674, 7.10541e-15, 0.999994, -0.000883677, 0.000145674, 0.000883673, 0.999998, 0.00133991, -0.00481129, 0.00579071)
 
 [node name="Path3D" parent="level/interactive_blocks/block-moving" index="1"]
 curve = SubResource("Curve3D_rrs1j")
 
 [node name="PathFollow3D" parent="level/interactive_blocks/block-moving/Path3D" index="0"]
-transform = Transform3D(0.999997, -1.28729e-07, -0.000145674, 7.10541e-15, 0.999994, -0.000883676, 0.000145674, 0.000883673, 0.999998, 0.00134015, -0.00481176, 0.00578928)
+transform = Transform3D(0.999997, -1.28729e-07, -0.000145674, 7.10541e-15, 0.999994, -0.000883677, 0.000145674, 0.000883673, 0.999998, 0.00134015, -0.00481176, 0.00578928)
 
 [node name="block-moving2" parent="level/interactive_blocks" instance=ExtResource("12_xxbfp")]
 transform = Transform3D(1.24, 0, 0, 0, 1.24, 0, 0, 0, 1.24, -19.2162, 14.3438, 11.4058)
 tween_full_duration = 4.5
 
 [node name="CharacterBody3D" parent="level/interactive_blocks/block-moving2" index="0"]
-transform = Transform3D(0.999997, -1.28729e-07, -0.000145674, 7.10541e-15, 0.999994, -0.000883676, 0.000145674, 0.000883673, 0.999998, 0.00133991, -0.00481129, 0.0057888)
+transform = Transform3D(0.999997, -1.28729e-07, -0.000145674, 7.10541e-15, 0.999994, -0.000883677, 0.000145674, 0.000883673, 0.999998, 0.00133991, -0.00481129, 0.0057888)
 
 [node name="Path3D" parent="level/interactive_blocks/block-moving2" index="1"]
 curve = SubResource("Curve3D_xxbfp")
 
 [node name="PathFollow3D" parent="level/interactive_blocks/block-moving2/Path3D" index="0"]
-transform = Transform3D(0.999997, -1.28729e-07, -0.000145674, 7.10541e-15, 0.999994, -0.000883676, 0.000145674, 0.000883673, 0.999998, 0.00134015, -0.00481176, 0.00578928)
+transform = Transform3D(0.999997, -1.28729e-07, -0.000145674, 7.10541e-15, 0.999994, -0.000883677, 0.000145674, 0.000883673, 0.999998, 0.00134015, -0.00481176, 0.00578928)
 
 [node name="RemoteTransform3D2" type="RemoteTransform3D" parent="level/interactive_blocks/block-moving2/Path3D/PathFollow3D" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 5.82077e-11, 0, -5.82077e-11, 1, 0, 1.02726, -0.000907898)
@@ -464,14 +464,14 @@ transform = Transform3D(1.24, 0, 0, 0, 1.24, 0, 0, 0, 1.24, -19.2162, 11.9572, 2
 tween_full_duration = 4.5
 
 [node name="CharacterBody3D" parent="level/interactive_blocks/block-moving3" index="0"]
-transform = Transform3D(0.999997, -1.28729e-07, -0.000145674, 7.10541e-15, 0.999994, -0.000883676, 0.000145674, 0.000883673, 0.999998, 0.00133991, 0.914551, 0.0057894)
+transform = Transform3D(0.999997, -1.28729e-07, -0.000145674, 7.10541e-15, 0.999994, -0.000883677, 0.000145674, 0.000883673, 0.999998, 0.00133991, 0.914551, 0.0057894)
 
 [node name="Path3D" parent="level/interactive_blocks/block-moving3" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.919362, 0)
 curve = SubResource("Curve3D_0yqnl")
 
 [node name="PathFollow3D" parent="level/interactive_blocks/block-moving3/Path3D" index="0"]
-transform = Transform3D(0.999997, -1.28729e-07, -0.000145674, 7.10541e-15, 0.999994, -0.000883676, 0.000145674, 0.000883673, 0.999998, 0.00134015, -0.00481176, 0.00578928)
+transform = Transform3D(0.999997, -1.28729e-07, -0.000145674, 7.10541e-15, 0.999994, -0.000883677, 0.000145674, 0.000883673, 0.999998, 0.00134015, -0.00481176, 0.00578928)
 
 [node name="RemoteTransform3D2" type="RemoteTransform3D" parent="level/interactive_blocks/block-moving3/Path3D/PathFollow3D" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 5.82077e-11, 0, -5.82077e-11, 1, 0, 0.980083, -0.000866055)
@@ -693,7 +693,7 @@ transform = Transform3D(8.9407e-08, 0, 1.08438, 0, 1.08438, 0, -1.78468, 0, 8.94
 transform = Transform3D(8.9407e-08, 0, 1.08438, 0, 1.08438, 0, -1.78468, 0, 8.9407e-08, -12.9945, 14.406, 29.6969)
 
 [node name="ladder" parent="level/others/ladders/ladder16" index="0"]
-transform = Transform3D(0.00146241, -0.00119137, 0.999999, 5.82075e-11, 0.999999, 0.00119138, -0.999996, -1.74223e-06, 0.00146242, 0.00133896, -0.00481224, 0.00578976)
+transform = Transform3D(0.00146241, -0.00119137, 0.999999, 5.82075e-11, 0.999999, 0.00119138, -0.999996, -1.74223e-06, 0.00146242, 0.00134087, -0.00481224, 0.00578976)
 
 [node name="CollisionShape3D" parent="level/others/ladders/ladder16/ladder" index="1"]
 transform = Transform3D(1, 0, 1.16415e-10, 0, 1, -1.16415e-10, -1.16415e-10, 0, 1, 0.00369263, 0.998068, 0.0224342)
