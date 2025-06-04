@@ -434,7 +434,7 @@ transform = Transform3D(1.23963, 0, 0, 0, 1.23963, 0, 0, 0, 1.23963, -19.2162, 1
 tween_full_duration = 4.5
 
 [node name="CharacterBody3D" parent="level/interactive_blocks/block-moving" index="0"]
-transform = Transform3D(0.999997, -1.28729e-07, -0.000145674, 7.10541e-15, 0.999994, -0.000883677, 0.000145674, 0.000883673, 0.999998, 0.00133991, -0.00481129, 0.00579071)
+transform = Transform3D(0.999997, -1.28729e-07, -0.000145674, 7.10541e-15, 0.999994, -0.000883676, 0.000145674, 0.000883673, 0.999998, 0.00133991, -0.00481129, 0.00579071)
 
 [node name="Path3D" parent="level/interactive_blocks/block-moving" index="1"]
 curve = SubResource("Curve3D_rrs1j")

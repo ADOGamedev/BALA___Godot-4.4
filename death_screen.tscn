@@ -183,6 +183,7 @@ mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_y0ggs")
 
 [node name="all_elements" type="Control" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

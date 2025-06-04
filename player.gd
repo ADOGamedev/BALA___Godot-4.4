@@ -270,7 +270,7 @@ func show_stun_screen():
 	stun_screen.visible = false
 	stun_screen.color.a = 1.0
 
-func take_damage(value: int, enemy_direction: Vector3, xform_multiplier: float = 1.5, invencibility_time: float = 0.5, hitted_by_trail: bool =  false):
+func take_damage(value: int, enemy_direction: Vector3, xform_multiplier: float = 1.5, invencibility_time: float = 0.5, hitted_by_trail: bool =  false, can_move_time: float = 0.5):
 	if is_invencible:
 		return
 	add_camera_trauma(1.0)
@@ -280,15 +280,19 @@ func take_damage(value: int, enemy_direction: Vector3, xform_multiplier: float =
 	health -= value
 	velocity = enemy_direction * speed * xform_multiplier / Engine.get_frames_per_second() #* Equivalent to multiply by delta
 	velocity.y = JUMP
-	can_move = false
+	handle_can_move(can_move_time)
 	if hitted_by_trail:
 		hitted_by_enemy_trail = true
 	await get_tree().create_timer(invencibility_time).timeout
 	is_invencible = false
-	can_move = true
 	if hitted_by_trail:
 		await get_tree().create_timer(0.5).timeout
 		hitted_by_enemy_trail = false
+
+func handle_can_move(can_move_time: float):
+	can_move = false
+	await get_tree().create_timer(can_move_time).timeout
+	can_move = true
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.is_in_group("enemies"):

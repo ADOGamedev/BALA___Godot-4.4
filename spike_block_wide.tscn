@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://dk6aowcndiwpn" path="res://spike_block.gd" id="2_a121k"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_56dt3"]
-size = Vector3(1.98364, 0.502563, 1)
+size = Vector3(1.98364, 0.502563, 0.501099)
 
 [node name="spike-block-wide" instance=ExtResource("1_wypwj")]
 collision_mask = 2
@@ -15,7 +15,7 @@ damage = 3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5028, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00012207, -0.0055542, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00012207, -0.0055542, -0.00189209)
 shape = SubResource("BoxShape3D_56dt3")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
