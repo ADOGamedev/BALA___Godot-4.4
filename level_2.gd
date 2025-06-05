@@ -58,10 +58,20 @@ func control_of_mouse_mode(event):
 func _on_portal_area_body_entered(body:Node3D) -> void:
 	if body.is_in_group("player"):
 		if current_chest != null:
-			obtained_coins += current_chest.items_left
-			level_completed = true
-			SaveLoadPlayerStats.player_stats["total_coins"] += current_chest.items_left
-			$ui.update_coins_label()
+			if current_chest.ITEM.instantiate().is_in_group("coins"):
+				obtained_coins += current_chest.items_left
+				level_completed = true
+				SaveLoadPlayerStats.player_stats["total_coins"] += current_chest.items_left
+				UI.update_coins_label()
+			elif current_chest.ITEM.instantiate().is_in_group("hearts"):
+				SaveLoadPlayerStats.player_stats["health"] += 2
+				SaveLoadPlayerStats.player_stats["max_health"] += 2
+
+				body.max_health += 2
+				get_node("ui").tween_heart_icon()
+				body.health += body.max_health
+				get_node("ui").update_stats()
+				
 		JsonLootSavingLoading.save_player_loot()
 		if !all_enemies_death:
 			return

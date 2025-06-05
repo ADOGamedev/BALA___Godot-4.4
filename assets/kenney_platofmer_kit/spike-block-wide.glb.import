@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/spike-block-wide.glb-344e965c9dfac5fb8e68d1cd
 
 [params]
 
-nodes/root_type="Area3D"
+nodes/root_type="StaticBody3D"
 nodes/root_name="Scene Root"
 nodes/apply_root_scale=true
 nodes/root_scale=1.0

@@ -562,7 +562,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_6ricy")
 curve = SubResource("Curve3D_xf63t")
 
 [node name="PathFollow3D" parent="level/interactive_blocks/falling_block15/Path3D" index="0"]
-transform = Transform3D(0.00118201, 0.000937373, 0.999991, -2.91032e-11, 0.99999, -0.000937375, -0.999976, 1.10798e-06, 0.00118203, 0.533472, -0.00481176, 0.00578976)
+transform = Transform3D(0.00118201, 0.000937373, 0.999991, -2.91031e-11, 0.99999, -0.000937375, -0.999976, 1.10798e-06, 0.00118203, 0.533472, -0.00481176, 0.00578976)
 
 [node name="falling_block19" parent="level/interactive_blocks" instance=ExtResource("12_hty01")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -13.809, 3.19491, 16.2868)
