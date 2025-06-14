@@ -39,6 +39,8 @@ func update_hearts(health: int, maximum_health: int):
 		VIGNETE.visible = true
 		last_heart_beating = true
 	if health > 2 and last_heart_beating:
+		var tween = get_tree().create_tween().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_SINE).set_loops().set_parallel(false)
+		tween.tween_property(LAST_HEART, "scale", Vector2(1.0, 1.0), 0.0)
 		last_heart_tween.stop()
 		vignete_tween.stop()
 		VIGNETE.visible = false

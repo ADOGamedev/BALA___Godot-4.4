@@ -6,7 +6,7 @@ var player_on_spikes = false
 
 func _physics_process(_delta: float) -> void:
 	if player_on_spikes and PLAYER.is_invencible == false:
-		PLAYER.take_damage(damage, -PLAYER.velocity.normalized(), 1.5, 0.9, false, 0.05)
+		PLAYER.take_damage(damage, -PLAYER.transform.basis.z, 1.5, 0.9, false, 0.05)
 
 func _on_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):

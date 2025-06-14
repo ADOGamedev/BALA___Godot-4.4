@@ -13,6 +13,9 @@ func _ready() -> void:
 		if JsonLootSavingLoading.player_loot.has(my_id):
 			if JsonLootSavingLoading.player_loot[my_id] == false:
 				queue_free()
+				
+	if add_new_heart:
+		%heart2.visible = true
 
 func _on_heart_body_entered(body):
 	if item_in_chest:
@@ -27,7 +30,7 @@ func _on_heart_body_entered(body):
 
 			body.max_health += 2
 			owner.get_node("ui").tween_heart_icon()
-		body.health += body.max_health
+		body.health = body.max_health
 		owner.get_node("ui").update_stats()
 
 		await get_tree().create_timer(0.4).timeout

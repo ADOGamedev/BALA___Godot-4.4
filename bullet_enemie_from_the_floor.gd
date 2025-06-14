@@ -128,4 +128,3 @@ func check_death():
 		owner.enemies_dead += 1
 		if enemy.has_method("die"):
 			enemy.die()
-

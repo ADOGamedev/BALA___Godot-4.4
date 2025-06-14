@@ -28,7 +28,7 @@ var dead_in_floor = false
 									$sniper_enemy/Armature/Skeleton3D/Sphere_014, $sniper_enemy/Armature/Cylinder_007]
 
 var distance_to_player : float
-var MAX_DISTANCE_TO_PLAYER := 11.0
+var MAX_DISTANCE_TO_PLAYER := 8.0
 @onready var SHOOT_TIMER := $Timer
 var shoot_timer_timeout := true
 var SHOOT_WAIT_TIME = 3.0
@@ -101,7 +101,7 @@ func handle_anim_tree():
 			ANIM_TREE.set("parameters/conditions/can_walk", false)
 			ANIM_TREE.set("parameters/conditions/can_idle", true)
 
-	else:
+	elif current_state != State.SHOOTING:
 		ANIM_TREE.set("parameters/conditions/can_shoot", false)
 		ANIM_TREE.set("parameters/conditions/can_walk", true)
 		ANIM_TREE.set("parameters/conditions/can_idle", false)

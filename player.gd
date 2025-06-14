@@ -77,8 +77,8 @@ var MOUSE_SENSIBILITY = 0.0017
 var SENSIBILITY_DENOMINATOR = 15000
 var CAMERA_UP_DOWN_LIMIT = 1.2
 
-var health = 4
-var max_health = 4
+var health = 0
+var max_health = 0
 var is_invencible = false
 var is_dead = false
 var hitted_by_enemy_trail = false

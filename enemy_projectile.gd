@@ -17,6 +17,6 @@ func start(xform):
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.is_in_group("shotgun_enemies"):
 		return
-	queue_free()
 	if body.is_in_group("player"):
 		body.take_damage(damage, -transform.basis.z)
+	queue_free()

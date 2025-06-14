@@ -258,8 +258,8 @@ surface_material_override/0 = SubResource("StandardMaterial3D_fngt6")
 surface_material_override/1 = SubResource("StandardMaterial3D_fngt6")
 
 [node name="Skeleton3D" parent="sniper_enemy/Armature" index="2"]
-bones/7/rotation = Quaternion(8.04403e-16, -7.9011e-16, 1.20807e-15, 1)
-bones/10/rotation = Quaternion(8.04403e-16, 7.9011e-16, -1.20807e-15, 1)
+bones/7/rotation = Quaternion(5.20145e-09, 3.25643e-08, 0.267777, 0.963481)
+bones/10/rotation = Quaternion(-2.90718e-08, 3.10096e-08, 0.303144, 0.952945)
 
 [node name="Cylinder" parent="sniper_enemy/Armature/Skeleton3D" index="0"]
 surface_material_override/0 = SubResource("StandardMaterial3D_v2rua")

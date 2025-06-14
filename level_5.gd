@@ -2,14 +2,16 @@ extends Node3D
 
 var obtained_loot_file := ConfigFile.new()
 
-#@onready var CHEST = %final_chest
-#@onready var PORTAL = %end_portal
+@onready var CHEST = %final_chest
+@onready var PORTAL = %end_portal
 @onready var POPOUT_TEXTS = $popouts_texts
 @onready var PLAYER = $player
 @onready var PAUSE_MENU = $pause_menu
 @onready var LEVEL_COMPLETED_SCREEN = $level_completed_screen
 @onready var DEATH_SCREEN = $death_screen
 @onready var UI = $ui
+
+@onready var DIAMOND_SPIKE_TRAPS := [%"trap-spikes-large18", %"trap-spikes17", %"trap-spikes67"]
 
 @export var level_num = 5
 var enemies_dead = 0
@@ -29,14 +31,15 @@ func _ready() -> void:
 
 	UpdateResolution.update_resolution()
 
-#func _process(_delta: float) -> void:
-	#if enemies_dead == 7:
-		#all_enemies_death = true
+func _process(_delta: float) -> void:
+	hide_spikes_traps()
+	if enemies_dead == 4:
+		all_enemies_death = true
 		
-	#if all_enemies_death:
-		#if CHEST.locked:
-			#CHEST.can_unlock = true
-		#PORTAL.turn_on_portal(true)
+	if all_enemies_death:
+		if CHEST.locked:
+			CHEST.can_unlock = true
+		PORTAL.turn_on_portal(true)
 
 func _unhandled_input(event: InputEvent) -> void:
 	control_of_mouse_mode(event)
@@ -54,6 +57,11 @@ func show_dead_screen():
 	DEATH_SCREEN.show_death_screen()
 	get_tree().paused = true
 
+func hide_spikes_traps():
+	if SaveLoadPlayerStats.player_stats["diamonds"]["5"][1] == true:
+		for trap in DIAMOND_SPIKE_TRAPS:
+			trap.can_show = false
+			
 func update_world_env():
 	var env = $WorldEnvironment.environment
 	env.sdfgi_enabled = false

@@ -15,7 +15,7 @@ damage = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.500464, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00320435, 0.00177765, 0.00827026)
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0.00320435, 0.00177765, 0.00827026)
 shape = SubResource("BoxShape3D_2271j")
 
 [node name="Area3D" type="Area3D" parent="." index="2"]

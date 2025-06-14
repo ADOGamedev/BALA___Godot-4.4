@@ -8,7 +8,7 @@ var player_stats = {
 	"player_has_loaded_weapons": false,
 
 	"levels_completed": 0,
-	"levels_unlocked": 0,
+	"levels_unlocked": 5,
 
 	"diamonds": {
 		"1": [false],
@@ -25,8 +25,8 @@ var player_stats = {
 	"total_coins": 0,
 	"total_diamonds": 0,
 
-	"max_health": 4,
-	"health": 4
+	"max_health": 8,
+	"health": 8
 }
 
 func save_player_stats():

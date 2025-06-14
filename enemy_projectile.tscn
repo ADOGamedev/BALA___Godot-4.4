@@ -19,7 +19,7 @@ shape = SubResource("SphereShape3D_oe428")
 disabled = true
 
 [node name="Area3D" type="Area3D" parent="." index="2"]
-collision_layer = 24
+collision_layer = 17
 collision_mask = 27
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
