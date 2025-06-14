@@ -17,7 +17,6 @@ func start(xform):
 	scale = original_scale
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
-	queue_free()
 	if body.is_in_group("invisible_platforms"):
 		body.reveal_plat()
 	if body.is_in_group("enemies"):
@@ -30,11 +29,15 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 			body.health -= damage
 			if body.health > 0:
 				body.turn_red()
+	if body.is_in_group("crates"):
+		if !body.is_strong:	
+			body.apply_force(global_transform.basis.z * 160 + Vector3.UP * 100, (global_position - body.global_position).normalized())
 				
 	if body.is_in_group("marionette_enemies") and body.rotation_degrees.x >= -5 and body.rotation_degrees.x <= 5:
 		var tween = get_tree().create_tween().set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT)
 		var marionette_target_rotation = -90.0 if velocity.z < 0 else 90.0
 		tween.tween_property(body, "rotation_degrees:x", marionette_target_rotation, 0.7)
+	queue_free()
 
 func _on_timer_timeout() -> void:
 	queue_free()

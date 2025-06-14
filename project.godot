@@ -63,6 +63,7 @@ fusil_enemies=""
 shotgun_enemies=""
 tracer_enemies=""
 mini_enemies=""
+crates=""
 
 [importer_defaults]
 

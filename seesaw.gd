@@ -2,7 +2,7 @@ extends Node3D
 
 @onready var SEESAW : RigidBody3D = $seesaw
 var body_count = 0
-var RETURNING_ANGULAR_VEL = 0.2
+var RETURNING_ANGULAR_VEL = 0.5
 
 func _physics_process(delta: float) -> void:
 	return_to_zero(delta)

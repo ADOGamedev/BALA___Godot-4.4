@@ -1,0 +1,119 @@
+[gd_scene load_steps=12 format=3 uid="uid://b0d62t8jo8osm"]
+
+[ext_resource type="Environment" uid="uid://bcdsowgnys01p" path="res://level_env.tres" id="1_cxtle"]
+[ext_resource type="PackedScene" uid="uid://nxldtv1ovv5l" path="res://player.tscn" id="2_rp77s"]
+[ext_resource type="PackedScene" uid="uid://b1ck7gyuwc3j" path="res://ui.tscn" id="3_x08gm"]
+[ext_resource type="PackedScene" uid="uid://qwjhp5imx3s1" path="res://popouts_texts.tscn" id="4_ql5rd"]
+[ext_resource type="PackedScene" uid="uid://i2lawlwb885w" path="res://weapon_menu.tscn" id="5_46l4w"]
+[ext_resource type="PackedScene" uid="uid://b117ku868kmiq" path="res://pause_menu.tscn" id="6_urw5x"]
+[ext_resource type="PackedScene" uid="uid://ye31ome7ecnf" path="res://level_complete_screen.tscn" id="7_4oh3s"]
+[ext_resource type="PackedScene" uid="uid://btx2ixvp13h0r" path="res://death_screen.tscn" id="8_y7l3p"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_pvlfc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t86xn"]
+albedo_color = Color(0.266667, 0.760784, 0.419608, 1)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_7ixf5"]
+plane = Plane(1, 0, 0, 0)
+
+[node name="level_preset" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("1_cxtle")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.953675, 0.112945, -0.278832, 0.243956, 0.252009, 0.93647, 0.176038, -0.961111, 0.212781, -0.030304, 12.1414, 0.000394821)
+light_color = Color(1, 0.681, 0.34, 1)
+light_energy = 0.775
+light_indirect_energy = 0.817
+shadow_enabled = true
+directional_shadow_mode = 1
+
+[node name="scenary_platform" type="StaticBody3D" parent="."]
+transform = Transform3D(90, 0, 0, 0, 90, 0, 0, 0, 90, -1.28629, 0.684255, 2.89418)
+collision_mask = 2
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="scenary_platform"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0189501)
+mesh = SubResource("PlaneMesh_pvlfc")
+surface_material_override/0 = SubResource("StandardMaterial3D_t86xn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="scenary_platform"]
+transform = Transform3D(-4.37114e-09, -0.1, 0, 0.1, -4.37114e-09, 0, 0, 0, 0.1, 0, 0, 0)
+shape = SubResource("WorldBoundaryShape3D_7ixf5")
+
+[node name="player" parent="." instance=ExtResource("2_rp77s")]
+transform = Transform3D(-0.823602, 0, -0.567168, 0, 1, 0, 0.567168, 0, -0.823602, -0.820924, 0.83299, 2.54561)
+load_weapons_from_global = true
+
+[node name="ui" parent="." instance=ExtResource("3_x08gm")]
+mouse_filter = 2
+
+[node name="popouts_texts" parent="." instance=ExtResource("4_ql5rd")]
+
+[node name="weapon_menu" parent="." instance=ExtResource("5_46l4w")]
+visible = false
+
+[node name="pause_menu" parent="." instance=ExtResource("6_urw5x")]
+visible = false
+
+[node name="level_completed_screen" parent="." instance=ExtResource("7_4oh3s")]
+visible = false
+
+[node name="death_screen" parent="." instance=ExtResource("8_y7l3p")]
+visible = false
+
+[node name="platforms" type="Node3D" parent="."]
+
+[node name="interactive_blocks" type="Node3D" parent="."]
+
+[node name="pikcups" type="Node3D" parent="."]
+
+[node name="coins" type="Node3D" parent="pikcups"]
+
+[node name="diamonds" type="Node3D" parent="pikcups"]
+
+[node name="hearts" type="Node3D" parent="pikcups"]
+
+[node name="battle_zones" type="Node3D" parent="."]
+
+[node name="enemies" type="Node3D" parent="."]
+
+[node name="others" type="Node3D" parent="."]
+
+[node name="portals" type="Node3D" parent="others"]
+
+[node name="chests" type="Node3D" parent="others"]
+
+[node name="ladders" type="Node3D" parent="others"]
+
+[node name="fences" type="Node3D" parent="others"]
+
+[node name="spikes" type="Node3D" parent="others"]
+
+[node name="forests" type="Node3D" parent="."]
+
+[node name="rocks" type="Node3D" parent="."]
+
+[node name="rocks" type="Node3D" parent="rocks"]
+
+[node name="stones" type="Node3D" parent="rocks"]
+
+[node name="plants" type="Node3D" parent="."]
+
+[node name="trees" type="Node3D" parent="plants"]
+
+[node name="trees" type="Node3D" parent="plants/trees"]
+
+[node name="pines" type="Node3D" parent="plants/trees"]
+
+[node name="plants" type="Node3D" parent="plants"]
+
+[node name="flowers" type="Node3D" parent="plants"]
+
+[node name="red_flowers" type="Node3D" parent="plants/flowers"]
+
+[node name="blue_flowers" type="Node3D" parent="plants/flowers"]
+
+[node name="poles_barriers" type="Node3D" parent="."]
