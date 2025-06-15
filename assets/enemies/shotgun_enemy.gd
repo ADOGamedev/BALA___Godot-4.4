@@ -30,6 +30,8 @@ var dead = false
 
 var head_exploted = false
 
+var distance_to_player : float
+
 @export var projectile_speed := 26.0
 @export var projectile_damage := 2
 @export var projectile_scale := 0.1
@@ -60,6 +62,8 @@ func _process(delta):
 		return
 	if !can_target_player:
 		current_state = State.UNDERGROUND
+
+	calculate_distance_to_player()
 	update_shake()
 	check_has_appeared()
 	chase_player(delta)
@@ -76,6 +80,13 @@ func shoot():
 		new_projectile.scale = Vector3(projectile_scale, projectile_scale, projectile_scale)
 		get_parent().owner.add_child(new_projectile)
 		new_projectile.start(shooting_pos.global_transform)
+
+func calculate_distance_to_player():
+	distance_to_player = (Vector2(PLAYER.global_position.x - global_position.x, 
+								PLAYER.global_position.z - global_position.z)).length()
+
+func predict_player_pos():
+	player_pos += PLAYER.velocity * 0.6 * distance_to_player / 8.0	#* Multiply by 0.6 to match more accuarate the predict
 
 func calculate_shells_forward_dir():
 	for shell in SHELL_FRAGMENTS:
@@ -126,8 +137,8 @@ func update_shake():
 	if previous_health != health:
 		var intensity = (20.0 - health) / 20.0  #* 20.0 is the original health
 		var tween = get_tree().create_tween().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_SINE).set_parallel(true)
-		tween.tween_property(HEAD_MESH, "scale:x", 1.8 * intensity + 1.0, 0.2)
-		tween.tween_property(HEAD_MESH, "scale:z", 1.8 * intensity + 1.0, 0.2)
+		tween.tween_property(HEAD_MESH, "scale:x", 1.4 * intensity + 1.0, 0.2)
+		tween.tween_property(HEAD_MESH, "scale:z", 1.4 * intensity + 1.0, 0.2)
 
 		shake(intensity)
 
@@ -166,6 +177,11 @@ func look_at_player():
 	rotation.x = 0
 
 func die():
+	predict_player_pos()
+	var previous_scale = scale
+	global_transform = global_transform.looking_at(player_pos)
+	scale = previous_scale
+
 	dead = true
 	vanish_head_particles()
 	shoot()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://becaq5olaifro"]
+[gd_scene load_steps=41 format=4 uid="uid://becaq5olaifro"]
 
 [ext_resource type="Script" uid="uid://2y017q21w34k" path="res://level_6.gd" id="1_t1wmb"]
 [ext_resource type="Environment" uid="uid://bcdsowgnys01p" path="res://level_env.tres" id="2_soim0"]
@@ -19,6 +19,13 @@
 [ext_resource type="PackedScene" uid="uid://f8ijmwxs1hr" path="res://crate.tscn" id="15_notfv"]
 [ext_resource type="PackedScene" uid="uid://cp8lulo4bjgga" path="res://assets/platform_Blocks/block-moving.tscn" id="16_eu30q"]
 [ext_resource type="Texture2D" uid="uid://p1tfg3fy4liw" path="res://assets/kenney_platofmer_kit/block-moving_colormap.png" id="17_pvmaq"]
+[ext_resource type="PackedScene" uid="uid://dlp3amfk61bq4" path="res://bullet_enemie_from_the_floor.tscn" id="18_wvs5p"]
+[ext_resource type="PackedScene" uid="uid://bqtqtxmlfgafq" path="res://assets/enemies/shotgun_enemy.tscn" id="19_ptubb"]
+[ext_resource type="PackedScene" uid="uid://cwougjy11yor8" path="res://portal.tscn" id="20_6dh2k"]
+[ext_resource type="PackedScene" uid="uid://cacxsoci8u1bm" path="res://assets/enemies/sniper_enemy.tscn" id="20_ylvhy"]
+[ext_resource type="PackedScene" uid="uid://cxemjfibiwdd8" path="res://assets/enemies/bullet_enemie.tscn" id="21_ds035"]
+[ext_resource type="PackedScene" uid="uid://fdnctvq8by32" path="res://chest.tscn" id="21_ylvhy"]
+[ext_resource type="PackedScene" uid="uid://dgyuck0pne5ij" path="res://heart.tscn" id="22_ds035"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_hg2ow"]
 
@@ -77,6 +84,9 @@ size = Vector3(2.4175, 2.14643, 2.4567)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ds035"]
 size = Vector3(2.4175, 2.14643, 2.4567)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rbqkx"]
+size = Vector3(14.0286, 1.75586, 14.0622)
 
 [node name="level_6" type="Node3D"]
 script = ExtResource("1_t1wmb")
@@ -296,6 +306,24 @@ transform = Transform3D(-2.04379e-07, 0, -4.67563, 0, 4.67563, 0, 4.67563, 0, -2
 [node name="block-grass-overhang-large35" parent="platforms/block-grass-overhang-large47" instance=ExtResource("10_3eqwd")]
 transform = Transform3D(1, -6.47086e-15, -8.74228e-08, 3.82137e-15, -1.69334, 8.74228e-08, -8.74228e-08, -1.48036e-07, -1, 0, 0, 0)
 
+[node name="block-grass-overhang-large51" parent="platforms" instance=ExtResource("10_3eqwd")]
+transform = Transform3D(-2.04379e-07, 0, -4.67563, 0, 4.67563, 0, 4.67563, 0, -2.04379e-07, -28.5516, 1.38251, -14.8373)
+
+[node name="block-grass-overhang-large35" parent="platforms/block-grass-overhang-large51" instance=ExtResource("10_3eqwd")]
+transform = Transform3D(1, -6.47086e-15, -8.74228e-08, 3.82137e-15, -1.69334, 8.74228e-08, -8.74228e-08, -1.48036e-07, -1, 0, 0, 0)
+
+[node name="block-grass-overhang-large52" parent="platforms" instance=ExtResource("10_3eqwd")]
+transform = Transform3D(-2.04379e-07, 0, -4.67563, 0, 4.67563, 0, 4.67563, 0, -2.04379e-07, -28.5516, 1.38251, -7.85663)
+
+[node name="block-grass-overhang-large35" parent="platforms/block-grass-overhang-large52" instance=ExtResource("10_3eqwd")]
+transform = Transform3D(1, -6.47086e-15, -8.74228e-08, 3.82137e-15, -1.69334, 8.74228e-08, -8.74228e-08, -1.48036e-07, -1, 0, 0, 0)
+
+[node name="block-grass-overhang-large53" parent="platforms" instance=ExtResource("10_3eqwd")]
+transform = Transform3D(-2.86345e-07, 0, -6.5508, 0, 6.5508, 0, 6.5508, 0, -2.86345e-07, -28.552, -0.492, -1.051)
+
+[node name="block-grass-overhang-large35" parent="platforms/block-grass-overhang-large53" instance=ExtResource("10_3eqwd")]
+transform = Transform3D(1, -6.47086e-15, -8.74228e-08, 3.82137e-15, -1.69334, 8.74228e-08, -8.74228e-08, -1.48036e-07, -1, 0, 0, 0)
+
 [node name="block-grass-overhang-large49" parent="platforms" instance=ExtResource("10_3eqwd")]
 transform = Transform3D(-2.04379e-07, 0, -4.67563, 0, 4.67563, 0, 4.67563, 0, -2.04379e-07, -21.5776, 1.38251, -21.5295)
 
@@ -456,7 +484,7 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 43.804
 tween_full_duration = 5.5
 
 [node name="CharacterBody3D" parent="interactive_blocks/block-moving" index="0"]
-transform = Transform3D(-0.999998, -7.74914e-08, -0.000112923, 7.10541e-15, 0.999996, -0.000686234, 0.000112923, -0.000686233, -0.999999, 0.00134087, -0.00481176, 0.00579071)
+transform = Transform3D(-0.999998, -7.74914e-08, -0.000112923, 7.10541e-15, 0.999996, -0.000686235, 0.000112923, -0.000686233, -0.999999, 0.00134087, -0.00481176, 0.00579071)
 
 [node name="block-moving2" parent="interactive_blocks/block-moving/CharacterBody3D" index="0"]
 transform = Transform3D(2, 0, 0, -2.84217e-14, 2, 1.74877e-11, 0, 1.74876e-11, 2, 0.409363, -0.000140429, -0.204628)
@@ -465,14 +493,14 @@ transform = Transform3D(2, 0, 0, -2.84217e-14, 2, 1.74877e-11, 0, 1.74876e-11, 2
 curve = SubResource("Curve3D_tgxug")
 
 [node name="PathFollow3D" parent="interactive_blocks/block-moving/Path3D" index="0"]
-transform = Transform3D(-0.999998, -7.74914e-08, -0.000112923, 7.10541e-15, 0.999996, -0.000686234, 0.000112923, -0.000686233, -0.999999, 0.00134015, -0.00481176, 0.00578928)
+transform = Transform3D(-0.999998, -7.74914e-08, -0.000112923, 7.10541e-15, 0.999996, -0.000686235, 0.000112923, -0.000686233, -0.999999, 0.00134015, -0.00481176, 0.00578928)
 
 [node name="block-moving2" parent="interactive_blocks" instance=ExtResource("16_eu30q")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 25.9999, 4.4738, -27.5204)
 tween_full_duration = 5.5
 
 [node name="CharacterBody3D" parent="interactive_blocks/block-moving2" index="0"]
-transform = Transform3D(-0.999998, -7.74914e-08, -0.000112923, 7.10541e-15, 0.999996, -0.000686234, 0.000112923, -0.000686233, -0.999999, 0.00134087, -0.00481176, 0.0057888)
+transform = Transform3D(-0.999998, -7.74914e-08, -0.000112923, 7.10541e-15, 0.999996, -0.000686235, 0.000112923, -0.000686233, -0.999999, 0.00134087, -0.00481176, 0.0057888)
 
 [node name="block-moving2" parent="interactive_blocks/block-moving2/CharacterBody3D" index="0"]
 transform = Transform3D(2, 0, 0, -2.84217e-14, 2, 1.74877e-11, 0, 1.74876e-11, 2, 0.409363, -0.000140429, -0.204628)
@@ -482,14 +510,14 @@ mesh = SubResource("2")
 curve = SubResource("Curve3D_tgxug")
 
 [node name="PathFollow3D" parent="interactive_blocks/block-moving2/Path3D" index="0"]
-transform = Transform3D(-0.999998, -7.74914e-08, -0.000112923, 7.10541e-15, 0.999996, -0.000686234, 0.000112923, -0.000686233, -0.999999, 0.00134015, -0.00481176, 0.00578928)
+transform = Transform3D(-0.999998, -7.74914e-08, -0.000112923, 7.10541e-15, 0.999996, -0.000686235, 0.000112923, -0.000686233, -0.999999, 0.00134015, -0.00481176, 0.00578928)
 
 [node name="block-moving3" parent="interactive_blocks" instance=ExtResource("16_eu30q")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8.79322, 5.57131, -27.5204)
 tween_full_duration = 5.5
 
 [node name="CharacterBody3D" parent="interactive_blocks/block-moving3" index="0"]
-transform = Transform3D(-0.999998, -7.74914e-08, -0.000112923, 7.10541e-15, 0.999996, -0.000686234, 0.000112923, -0.000686233, -0.999999, 0.00134087, -0.00481176, 0.00578976)
+transform = Transform3D(-0.999998, -7.74914e-08, -0.000112923, 7.10541e-15, 0.999996, -0.000686235, 0.000112923, -0.000686233, -0.999999, 0.00134087, -0.00481176, 0.00578976)
 
 [node name="block-moving2" parent="interactive_blocks/block-moving3/CharacterBody3D" index="0"]
 transform = Transform3D(2, 0, 0, -2.84217e-14, 2, 1.74877e-11, 0, 1.74876e-11, 2, 0.409363, -0.000140429, -0.204628)
@@ -499,7 +527,7 @@ mesh = SubResource("2")
 curve = SubResource("Curve3D_tgxug")
 
 [node name="PathFollow3D" parent="interactive_blocks/block-moving3/Path3D" index="0"]
-transform = Transform3D(-0.999998, -7.74914e-08, -0.000112923, 7.10541e-15, 0.999996, -0.000686234, 0.000112923, -0.000686233, -0.999999, 0.00134015, -0.00481176, 0.00578928)
+transform = Transform3D(-0.999998, -7.74914e-08, -0.000112923, 7.10541e-15, 0.999996, -0.000686235, 0.000112923, -0.000686233, -0.999999, 0.00134015, -0.00481176, 0.00578928)
 
 [node name="crates_areas" type="Node3D" parent="."]
 
@@ -569,13 +597,67 @@ shape = SubResource("BoxShape3D_ds035")
 
 [node name="battle_zones" type="Node3D" parent="."]
 
+[node name="Area3D" type="Area3D" parent="battle_zones"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.8956, 9.42821, 25.626)
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="battle_zones/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0401459, -3.10074, -0.00214767)
+shape = SubResource("BoxShape3D_rbqkx")
+
+[node name="Area3D2" type="Area3D" parent="battle_zones"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.4821, 11.7719, -28.6416)
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="battle_zones/Area3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0401459, -3.10074, -0.00214767)
+shape = SubResource("BoxShape3D_rbqkx")
+
 [node name="enemies" type="Node3D" parent="."]
+
+[node name="bullet_enemie_from_the_floor" parent="enemies" instance=ExtResource("18_wvs5p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.0398, 3.75747, 20.2566)
+enemy_scene = ExtResource("19_ptubb")
+enemy_outside_pos_add_multiplier = 1.2
+
+[node name="bullet_enemie_from_the_floor3" parent="enemies" instance=ExtResource("18_wvs5p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.4206, 6.22895, -23.9003)
+enemy_scene = ExtResource("19_ptubb")
+enemy_outside_pos_add_multiplier = 1.2
+
+[node name="bullet_enemie_from_the_floor4" parent="enemies" instance=ExtResource("18_wvs5p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.4206, 6.22895, -33.4198)
+enemy_scene = ExtResource("19_ptubb")
+enemy_outside_pos_add_multiplier = 1.2
+
+[node name="bullet_enemie_from_the_floor5" parent="enemies" instance=ExtResource("18_wvs5p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.4206, 5.5871, -26.5763)
+enemy_scene = ExtResource("20_ylvhy")
+
+[node name="bullet_enemie_from_the_floor6" parent="enemies" instance=ExtResource("18_wvs5p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.4206, 6.97958, -30.5245)
+enemy_scene = ExtResource("21_ds035")
+
+[node name="bullet_enemie_from_the_floor2" parent="enemies" instance=ExtResource("18_wvs5p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.3828, 3.75747, 20.2566)
+enemy_scene = ExtResource("19_ptubb")
+enemy_outside_pos_add_multiplier = 1.2
 
 [node name="others" type="Node3D" parent="."]
 
 [node name="portals" type="Node3D" parent="others"]
 
+[node name="end_portal" parent="others/portals" instance=ExtResource("20_6dh2k")]
+unique_name_in_owner = true
+transform = Transform3D(-2.2327, 0, 1.95189e-07, 0, 2.2327, 0, -1.95189e-07, 0, -2.2327, -28.5119, 6.04263, 4.18707)
+
 [node name="chests" type="Node3D" parent="others"]
+
+[node name="final_chest" parent="others/chests" instance=ExtResource("21_ylvhy")]
+unique_name_in_owner = true
+transform = Transform3D(-3, 0, 2.62268e-07, 0, 3, 0, -2.62268e-07, 0, -3, -31.7022, 6.04584, 2.67234)
+ITEM = ExtResource("22_ds035")
+number_of_items = 1
 
 [node name="ladders" type="Node3D" parent="others"]
 
@@ -673,7 +755,21 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 43.010
 [connection signal="body_exited" from="crates_areas/Area3D6" to="others/boxes/crate7" method="_on_area_body_exited"]
 [connection signal="body_entered" from="crates_areas/Area3D7" to="others/boxes/crate6" method="_on_area_body_entered"]
 [connection signal="body_exited" from="crates_areas/Area3D7" to="others/boxes/crate6" method="_on_area_body_exited"]
+[connection signal="body_entered" from="battle_zones/Area3D" to="enemies/bullet_enemie_from_the_floor" method="_on_battle_triguer_body_entered"]
+[connection signal="body_entered" from="battle_zones/Area3D" to="enemies/bullet_enemie_from_the_floor2" method="_on_battle_triguer_body_entered"]
+[connection signal="body_exited" from="battle_zones/Area3D" to="enemies/bullet_enemie_from_the_floor" method="_on_battle_triguer_body_exited"]
+[connection signal="body_exited" from="battle_zones/Area3D" to="enemies/bullet_enemie_from_the_floor2" method="_on_battle_triguer_body_exited"]
+[connection signal="body_entered" from="battle_zones/Area3D2" to="enemies/bullet_enemie_from_the_floor3" method="_on_battle_triguer_body_entered"]
+[connection signal="body_entered" from="battle_zones/Area3D2" to="enemies/bullet_enemie_from_the_floor4" method="_on_battle_triguer_body_entered"]
+[connection signal="body_entered" from="battle_zones/Area3D2" to="enemies/bullet_enemie_from_the_floor5" method="_on_battle_triguer_body_entered"]
+[connection signal="body_entered" from="battle_zones/Area3D2" to="enemies/bullet_enemie_from_the_floor6" method="_on_battle_triguer_body_entered"]
+[connection signal="body_exited" from="battle_zones/Area3D2" to="enemies/bullet_enemie_from_the_floor3" method="_on_battle_triguer_body_exited"]
+[connection signal="body_exited" from="battle_zones/Area3D2" to="enemies/bullet_enemie_from_the_floor4" method="_on_battle_triguer_body_exited"]
+[connection signal="body_exited" from="battle_zones/Area3D2" to="enemies/bullet_enemie_from_the_floor5" method="_on_battle_triguer_body_exited"]
+[connection signal="body_exited" from="battle_zones/Area3D2" to="enemies/bullet_enemie_from_the_floor6" method="_on_battle_triguer_body_exited"]
 
 [editable path="interactive_blocks/block-moving"]
 [editable path="interactive_blocks/block-moving2"]
 [editable path="interactive_blocks/block-moving3"]
+[editable path="others/portals/end_portal"]
+[editable path="others/portals/end_portal/large_door"]
